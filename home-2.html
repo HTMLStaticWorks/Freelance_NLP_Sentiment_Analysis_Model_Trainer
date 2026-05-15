@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise NLP Solutions | High-Precision Sentiment Analysis</title>
+    <meta name="description"
+        content="Advanced NLP consulting, sentiment analysis pipelines, and custom model training for global enterprises.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap-grid.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="icon" type="image/png" href="https://img.icons8.com/ios-filled/50/2563eb/brain.png">
+    <style>
+        .hero-2 {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.15), transparent),
+                radial-gradient(circle at 20% 80%, rgba(96, 165, 250, 0.05), transparent);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-2::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(var(--border-color) 1px, transparent 1px);
+            background-size: 40px 40px;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .testimonial-card {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 3rem;
+            position: relative;
+        }
+
+        .testimonial-card i {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            opacity: 0.1;
+            font-size: 4rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.5rem 0;
+        }
+
+        .faq-question {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            color: var(--text-secondary);
+            margin-top: 0;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            margin-top: 1rem;
+        }
+
+        .faq-item.active .fa-chevron-down {
+            transform: rotate(180deg);
+        }
+
+        .stat-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid var(--accent-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-brain text-accent me-2"></i>
+                <span class="text-accent">NLP</span>Consultant
+            </a>
+
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="index.html" class="nav-item active">Home <i class="fas fa-chevron-down ms-1"
+                            style="font-size: 0.7rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">Layout 1</a>
+                        <a href="home-2.html" class="dropdown-item">Layout 2</a>
+                    </div>
+                </li>
+                <li><a href="services.html" class="nav-item">Services</a></li>
+                <li><a href="models.html" class="nav-item">Models</a></li>
+                <li><a href="domain-adaptation.html" class="nav-item">Domain Adaptation</a></li>
+                <li><a href="blog.html" class="nav-item">Blog</a></li>
+                <li><a href="contact.html" class="nav-item">Contact</a></li>
+                <li><a href="dashboard.html" class="nav-item">Dashboard</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button id="rtl-toggle" class="btn btn-outline" style="padding: 0.5rem 1rem;">RTL</button>
+                <button id="theme-toggle" class="btn btn-outline" style="padding: 0.5rem 1rem;">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <a href="signup.html" class="btn btn-primary">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section 2 -->
+    <header class="hero-2">
+        <div class="container text-center">
+            <div class="reveal">
+                <span class="badge bg-surface border px-3 py-1 mb-4 rounded-pill text-accent small fw-600">NEW:
+                    DOMAIN-ADAPTED RoBERTa v4.0</span>
+                <h1 class="display-1 mb-4">Deciphering the <span class="text-accent">Semantic</span> Pulse of Your
+                    Enterprise.</h1>
+                <p class="text-secondary lead mx-auto mb-5" style="max-width: 800px;">Deploy high-fidelity sentiment
+                    analysis pipelines that understand industry-specific nuances, from medical clinical trials to
+                    high-frequency financial reports.</p>
+                <div class="d-flex gap-3 justify-content-center">
+                    <a href="dashboard.html" class="btn btn-primary btn-lg">Launch Dashboard</a>
+                    <a href="contact.html" class="btn btn-outline btn-lg">Technical Audit</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section 1: Core Technologies (Icons + Cards) -->
+    <section class="section border-top">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="text-accent fw-600">ARCHITECTURE</span>
+                <h2 class="display-4">Built on the Edge of NLP</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 hover-lift reveal">
+                        <div class="mb-4 text-accent"><i class="fas fa-microchip fa-2x"></i></div>
+                        <h4>Transformer Fine-tuning</h4>
+                        <p class="text-secondary small">Custom adaptation of BERT, RoBERTa, and DeBERTa architectures
+                            for
+                            domain-specific lexical variance.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 hover-lift reveal">
+                        <div class="mb-4 text-accent"><i class="fas fa-layer-group fa-2x"></i></div>
+                        <h4>Adversarial Training</h4>
+                        <p class="text-secondary small">Using domain discriminators to ensure model internal
+                            representations remain invariant across industries.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 hover-lift reveal">
+                        <div class="mb-4 text-accent"><i class="fas fa-bolt fa-2x"></i></div>
+                        <h4>Low-Latency Inference</h4>
+                        <p class="text-secondary small">Optimized ONNX and TensorRT deployments for sub-10ms response
+                            times in production environments.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Visual Impact / Stats -->
+    <section class="section bg-surface">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 reveal">
+                    <h2 class="display-5 mb-4">Precision that <span class="text-accent">Scales</span></h2>
+                    <p class="text-secondary mb-5">Our models don't just count words; they understand intent. By
+                        leveraging massive unlabeled datasets, we bridge the semantic gap between general-purpose models
+                        and specialized industry requirements.</p>
+                    <div class="row g-4">
+                        <div class="col-6">
+                            <div class="stat-circle">
+                                <h3 class="mb-0">99%</h3>
+                                <p class="tiny fw-600 uppercase">F1-Score</p>
+                            </div>
+                            <p class="text-center small text-secondary">In Finance Domain</p>
+                        </div>
+                        <div class="col-6">
+                            <div class="stat-circle">
+                                <h3 class="mb-0">4x</h3>
+                                <p class="tiny fw-600 uppercase">Speed</p>
+                            </div>
+                            <p class="text-center small text-secondary">vs Default BERT</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-5 mt-lg-0 text-center">
+                    <div class="glass-panel p-4 reveal">
+                        <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&q=80&w=800"
+                            alt="Data Visualization" class="img-fluid rounded shadow-lg mx-auto d-block"
+                            style="max-width: 450px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Testimonials -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="text-accent fw-600">RECOGNITION</span>
+                <h2 class="display-4">Trusted by ML Engineers</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="testimonial-card reveal">
+                        <i class="fas fa-quote-right text-accent"></i>
+                        <p class="lead text-secondary mb-4">"The domain adaptation methodology implemented by the team
+                            reduced our error rate in quarterly report analysis by over 60%. It's the most robust NLP
+                            pipeline we've seen."</p>
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=100&h=100"
+                                alt="Sarah Chen" class="rounded-circle" style="width: 50px; height: 50px;">
+                            <div>
+                                <h5 class="mb-0">Dr. Sarah Chen</h5>
+                                <p class="small text-secondary mb-0">Head of AI, FinTech Global</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="testimonial-card reveal">
+                        <i class="fas fa-quote-right text-accent"></i>
+                        <p class="lead text-secondary mb-4">"Deployment was seamless. The quantization techniques meant
+                            we could run state-of-the-art RoBERTa models on our existing CPU-only edge servers with zero
+                            lag."</p>
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100&h=100"
+                                alt="James Wilson" class="rounded-circle" style="width: 50px; height: 50px;">
+                            <div>
+                                <h5 class="mb-0">James Wilson</h5>
+                                <p class="small text-secondary mb-0">CTO, HealthData Systems</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: FAQ -->
+    <section class="section bg-surface">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="section-header reveal">
+                        <span class="text-accent fw-600">COMMON QUERIES</span>
+                        <h2 class="display-4">Technical FAQ</h2>
+                    </div>
+                    <div class="faq-container reveal">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                How do you handle sarcasm and double-negation?
+                                <i class="fas fa-chevron-down text-accent"></i>
+                            </div>
+                            <div class="faq-answer">
+                                We utilize multi-head attention mechanisms that are specifically fine-tuned on datasets
+                                containing rhetorical linguistic features. Our sarcasm layer adds a secondary evaluation
+                                pass to identify conflicting sentiment markers.
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                What industries are currently supported for adaptation?
+                                <i class="fas fa-chevron-down text-accent"></i>
+                            </div>
+                            <div class="faq-answer">
+                                We maintain pre-trained pivot features for Finance, Healthcare, Legal, and E-commerce.
+                                Custom industries can be adapted within 72 hours using our continual pre-training
+                                pipelines.
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                Is my data used to train global models?
+                                <i class="fas fa-chevron-down text-accent"></i>
+                            </div>
+                            <div class="faq-answer">
+                                No. We follow a strict Zero-Knowledge architecture. Your data is used exclusively to
+                                create your private domain-adapted weights, which are isolated and encrypted at rest.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: CTA / Monitoring -->
+    <section class="section">
+        <div class="container">
+            <div class="card bg-surface border-accent shadow-lg p-5 reveal text-center">
+                <div class="mb-4 text-accent"><i class="fas fa-terminal fa-3x"></i></div>
+                <h2 class="display-5 mb-4">Ready to benchmark your data?</h2>
+                <p class="text-secondary mb-5 mx-auto" style="max-width: 600px;">Access our unified monitoring platform
+                    to visualize your model's performance in real-time. Start with a free technical audit today.</p>
+                <div class="d-flex gap-3 justify-content-center">
+                    <a href="signup.html" class="btn btn-primary btn-lg">Create Free Account</a>
+                    <a href="models.html" class="btn btn-outline btn-lg">View Benchmarks</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="nav-logo mb-4 d-block">
+                        <i class="fas fa-brain text-accent me-2"></i>
+                        <span class="text-accent">NLP</span>Consultant
+                    </a>
+                    <p class="text-secondary" style="max-width: 300px;">Providing specialized NLP engineering and
+                        sentiment analysis solutions for the modern enterprise data landscape.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Core Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="models.html">Model Training</a></li>
+                        <li><a href="domain-adaptation.html">Domain Adaptation</a></li>
+                        <li><a href="services.html">Pipeline Audits</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="dashboard.html">Analytics Dashboard</a></li>
+                        <li><a href="blog.html">Technical Blog</a></li>
+                        <li><a href="models.html">Benchmarks</a></li>
+                        <li><a href="contact.html">API Docs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Stay Updated</h4>
+                    <p class="text-secondary mb-3">Join our technical newsletter for the latest in ML research.</p>
+                    <form class="d-flex gap-2">
+                        <input type="email" class="form-control" placeholder="Email Address">
+                        <button class="btn btn-primary">Join</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 NLP Consultant. All rights reserved.</p>
+                <div class="d-flex gap-4">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/theme-toggle.js"></script>
+    <script src="assets/js/rtl-toggle.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script>
+        // FAQ Toggle Logic
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

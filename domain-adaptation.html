@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domain Adaptation | NLP Sentiment Consultant</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap-grid.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="icon" type="image/png" href="https://img.icons8.com/ios-filled/50/2563eb/brain.png">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-brain text-accent me-2"></i>
+                <span class="text-accent">NLP</span>Consultant
+            </a>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="index.html" class="nav-item">Home <i class="fas fa-chevron-down ms-1"
+                            style="font-size: 0.7rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">Layout 1</a>
+                        <a href="home-2.html" class="dropdown-item">Layout 2</a>
+                    </div>
+                </li>
+                <li><a href="services.html" class="nav-item">Services</a></li>
+                <li><a href="models.html" class="nav-item">Models</a></li>
+                <li><a href="domain-adaptation.html" class="nav-item active">Domain Adaptation</a></li>
+                <li><a href="blog.html" class="nav-item">Blog</a></li>
+                <li><a href="contact.html" class="nav-item">Contact</a></li>
+                <li><a href="dashboard.html" class="nav-item">Dashboard</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="rtl-toggle" class="btn btn-outline" style="padding: 0.5rem 1rem;">RTL</button>
+                <button id="theme-toggle" class="btn btn-outline" style="padding: 0.5rem 1rem;">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <a href="signup.html" class="btn btn-primary">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container text-center">
+            <h1 class="display-2">Domain <span class="text-accent">Adaptation</span></h1>
+            <p class="text-secondary mx-auto" style="max-width: 700px;">Transferring sentiment intelligence across
+                distinct industries using advanced unsupervised learning techniques.</p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="text-accent fw-600">SEMANTIC DRIFT</span>
+                <h2 class="display-5">Bridging the Contextual Gap</h2>
+                <p class="text-secondary">Language is fluid. A model trained on Amazon product reviews will
+                    fail to detect sentiment in a Central Bank interest rate announcement because the linguistic
+                    markers of "success" or "failure" have completely shifted.</p>
+            </div>
+            <div class="row justify-content-center align-items-center mb-5 pb-5">
+                <div class="col-lg-6 reveal">
+                    <div class="card bg-surface p-4">
+                        <div class="row g-0">
+                            <div class="col-6 border-end pe-4">
+                                <p class="small text-accent fw-600 mb-2 uppercase">Source (Retail)</p>
+                                <p class="mb-1 text-secondary">"Fast delivery"</p>
+                                <p class="mb-1 text-secondary">"Great build quality"</p>
+                                <p class="text-secondary">"Broken on arrival"</p>
+                            </div>
+                            <div class="col-6 ps-4">
+                                <p class="small text-accent fw-600 mb-2 uppercase">Target (Finance)</p>
+                                <p class="mb-1 text-secondary">"Hawkish stance"</p>
+                                <p class="mb-1 text-secondary">"Liquidity surplus"</p>
+                                <p class="text-secondary">"Market volatility"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 offset-lg-1 mt-5 mt-lg-0">
+                    <div class="glass-panel p-5 reveal text-center">
+                        <div class="display-1 text-accent mb-3 opacity-20"><i class="fas fa-arrows-split-up"></i></div>
+                        <h4>94% Variance</h4>
+                        <p class="text-secondary small">Typical lexical divergence between cross-industry datasets
+                            without adaptation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2: The Adaptation Pipeline -->
+            <div class="section-header reveal">
+                <span class="text-accent fw-600">METHODOLOGY</span>
+                <h2 class="display-5">The Adaptation Workflow</h2>
+            </div>
+            <div class="row g-4 text-center justify-content-center">
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 bg-surface shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc48?auto=format&fit=crop&q=80&w=800"
+                                alt="Server Data" class="blog-card-img">
+                            <div class="card-body p-0">
+                                <h5 class="mb-3 text-accent">Continual Pre-training</h5>
+                                <p class="text-secondary small">Further pre-training the base model on millions of
+                                    unlabeled target-domain tokens to learn the unique vocabulary.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 border-accent bg-surface shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800"
+                                alt="Tech Sphere" class="blog-card-img">
+                            <div class="card-body p-0">
+                                <h5 class="mb-3 text-accent">Adversarial Alignment</h5>
+                                <p class="text-secondary small">Using a Domain Discriminator to ensure that the internal
+                                    model representations are domain-invariant.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 bg-surface shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800"
+                                alt="Circuitry" class="blog-card-img">
+                            <div class="card-body p-0">
+                                <h5 class="mb-3 text-accent">Pivot Selection</h5>
+                                <p class="text-secondary small">Identifying "pivot" features that behave similarly in
+                                    both domains to ground the sentiment transfer.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3: Vertical Excellence Redesign -->
+            <div class="mt-5 pt-5 reveal">
+                <div class="section-header">
+                    <span class="text-accent fw-600">VERTICAL EXCELLENCE</span>
+                    <h2 class="display-5">Ready-to-Deploy Verticals</h2>
+                    <p class="text-secondary">We maintain pre-adapted model
+                        checkpoints for high-stakes industries where precision is non-negotiable and semantic accuracy
+                        is paramount.</p>
+                </div>
+
+                <div class="row g-4 text-center">
+                    <div class="col-lg-4">
+                        <div class="card h-100 hover-lift border-0 bg-surface shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1611974714024-4607a50d6c94?auto=format&fit=crop&q=80&w=800"
+                                alt="Finance" class="blog-card-img">
+                            <div class="card-body p-0">
+                                <h4 class="mb-3 text-accent">Finance</h4>
+                                <p class="text-secondary small mb-0">Detecting subtle market cues in quarterly reports,
+                                    investor calls, and financial news where terminology is highly specialized.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card h-100 hover-lift border-0 bg-surface shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1532187863486-abf8581ad7d7?auto=format&fit=crop&q=80&w=800"
+                                alt="Healthcare" class="blog-card-img">
+                            <div class="card-body p-0">
+                                <h4 class="mb-3 text-accent">Healthcare</h4>
+                                <p class="text-secondary small mb-0">Extracting patient sentiment from clinical trials,
+                                    healthcare feedback, and medical documentation with strict adherence to context.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card h-100 hover-lift border-0 bg-surface shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80&w=800"
+                                alt="Legal" class="blog-card-img">
+                            <div class="card-body p-0">
+                                <h4 class="mb-3 text-accent">Legal</h4>
+                                <p class="text-secondary small mb-0">Monitoring sentiment shifts in legislative
+                                    documentation, litigation proceedings, and regulatory compliance artifacts.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="nav-logo mb-4 d-block">
+                        <i class="fas fa-brain text-accent me-2"></i>
+                        <span class="text-accent">NLP</span>Consultant
+                    </a>
+                    <p class="text-secondary" style="max-width: 300px;">Providing specialized NLP engineering and
+                        sentiment analysis solutions for the modern enterprise data landscape.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Core Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="models.html">Model Training</a></li>
+                        <li><a href="domain-adaptation.html">Domain Adaptation</a></li>
+                        <li><a href="services.html">Pipeline Audits</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="dashboard.html">Analytics Dashboard</a></li>
+                        <li><a href="blog.html">Technical Blog</a></li>
+                        <li><a href="models.html">Benchmarks</a></li>
+                        <li><a href="contact.html">API Docs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Stay Updated</h4>
+                    <p class="text-secondary mb-3">Join our technical newsletter for the latest in ML research.</p>
+                    <form class="d-flex gap-2">
+                        <input type="email" class="form-control" placeholder="Email Address">
+                        <button class="btn btn-primary">Join</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 NLP Consultant. All rights reserved.</p>
+                <div class="d-flex gap-4">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/theme-toggle.js"></script>
+    <script src="assets/js/rtl-toggle.js"></script>
+    <script src="assets/js/animations.js"></script>
+</body>
+
+</html>

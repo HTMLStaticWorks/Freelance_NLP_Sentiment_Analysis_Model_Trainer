@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Dashboard | NLP Sentiment Consultant</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap-grid.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="icon" type="image/png" href="https://img.icons8.com/ios-filled/50/2563eb/brain.png">
+    
+    <style>
+        .dashboard-wrapper {
+            display: flex;
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+        
+        .dashboard-sidebar {
+            width: 280px;
+            background: var(--surface-color);
+            border-right: 1px solid var(--border-color);
+            padding: 2rem;
+            position: fixed;
+            height: calc(100vh - 80px);
+            overflow-y: auto;
+        }
+        
+        .dashboard-content {
+            flex: 1;
+            margin-left: 280px;
+            padding: 3rem;
+        }
+        
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .sidebar-nav li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.8rem 1.2rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: var(--transition-base);
+        }
+        
+        .sidebar-link:hover, .sidebar-link.active {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--accent-color);
+        }
+        
+        .stat-card {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: 12px;
+        }
+        
+        .upload-zone {
+            border: 2px dashed var(--border-color);
+            border-radius: 16px;
+            padding: 4rem;
+            text-align: center;
+            transition: var(--transition-base);
+            cursor: pointer;
+        }
+        
+        .upload-zone:hover {
+            border-color: var(--accent-color);
+            background: rgba(37, 99, 235, 0.02);
+        }
+        
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            background: var(--border-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .matrix-cell {
+            background: var(--surface-color);
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .matrix-header {
+            font-weight: 600;
+            background: rgba(15, 23, 42, 0.05);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+        
+        .cell-high { background: rgba(34, 197, 94, 0.2); }
+        .cell-med { background: rgba(234, 179, 8, 0.2); }
+        .cell-low { background: rgba(239, 44, 44, 0.2); }
+        
+        @media (max-width: 992px) {
+            .dashboard-sidebar { width: 80px; padding: 1rem; }
+            .sidebar-text { display: none; }
+            .dashboard-content { margin-left: 80px; padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-brain text-accent me-2"></i>
+                <span class="text-accent">NLP</span>Consultant
+            </a>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="index.html" class="nav-item">Home <i class="fas fa-chevron-down ms-1" style="font-size: 0.7rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">Layout 1</a>
+                        <a href="home-2.html" class="dropdown-item">Layout 2</a>
+                    </div>
+                </li>
+                <li><a href="services.html" class="nav-item">Services</a></li>
+                <li><a href="models.html" class="nav-item">Models</a></li>
+                <li><a href="domain-adaptation.html" class="nav-item">Domain Adaptation</a></li>
+                <li><a href="blog.html" class="nav-item">Blog</a></li>
+                <li><a href="contact.html" class="nav-item">Contact</a></li>
+                <li><a href="dashboard.html" class="nav-item active">Dashboard</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="rtl-toggle" class="btn btn-outline" style="padding: 0.5rem 1rem;">RTL</button>
+                <button id="theme-toggle" class="btn btn-outline" style="padding: 0.5rem 1rem;">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <a href="signup.html" class="btn btn-primary">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-wrapper">
+        <aside class="dashboard-sidebar">
+            <ul class="sidebar-nav">
+                <li><a href="#" class="sidebar-link active"><i class="fas fa-chart-pie"></i> <span class="sidebar-text">Overview</span></a></li>
+                <li><a href="#" class="sidebar-link"><i class="fas fa-file-upload"></i> <span class="sidebar-text">Datasets</span></a></li>
+                <li><a href="#" class="sidebar-link"><i class="fas fa-microchip"></i> <span class="sidebar-text">Models</span></a></li>
+                <li><a href="#" class="sidebar-link"><i class="fas fa-table"></i> <span class="sidebar-text">Reports</span></a></li>
+                <li><a href="#" class="sidebar-link"><i class="fas fa-rocket"></i> <span class="sidebar-text">Deployment</span></a></li>
+                <li><a href="#" class="sidebar-link mt-5"><i class="fas fa-cog"></i> <span class="sidebar-text">Settings</span></a></li>
+            </ul>
+        </aside>
+
+        <main class="dashboard-content">
+            <div class="d-flex justify-content-between align-items-end mb-5 reveal">
+                <div>
+                    <span class="text-accent fw-600">WORKSPACE</span>
+                    <h1 class="h2 mb-0">Analytics Dashboard</h1>
+                </div>
+                <div class="d-flex gap-3">
+                    <button class="btn btn-outline"><i class="fas fa-download me-2"></i>Export PDF</button>
+                    <button class="btn btn-primary"><i class="fas fa-plus me-2"></i>New Project</button>
+                </div>
+            </div>
+
+            <div class="row g-4 mb-5 reveal">
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <p class="text-secondary small mb-1">Global Accuracy</p>
+                        <h3 class="mb-0">98.4%</h3>
+                        <span class="text-success small"><i class="fas fa-arrow-up"></i> 0.2% vs last run</span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <p class="text-secondary small mb-1">F1 Score</p>
+                        <h3 class="mb-0">0.962</h3>
+                        <span class="text-secondary small">Stable</span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <p class="text-secondary small mb-1">Dataset Size</p>
+                        <h3 class="mb-0">1.2M</h3>
+                        <span class="text-secondary small">Labeled samples</span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <p class="text-secondary small mb-1">Active Models</p>
+                        <h3 class="mb-0">14</h3>
+                        <span class="text-accent small">3 in production</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 reveal">
+                <!-- Upload Section -->
+                <div class="col-lg-7">
+                    <div class="card h-100">
+                        <h4 class="mb-4">Upload Labeled Dataset</h4>
+                        <div class="upload-zone">
+                            <i class="fas fa-cloud-arrow-up fa-3x text-accent mb-3"></i>
+                            <h5>Drag and drop datasets here</h5>
+                            <p class="text-secondary small">Supports JSONL, CSV, and Parquet formats (Max 2GB)</p>
+                            <button class="btn btn-outline mt-3">Select Files</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Confusion Matrix -->
+                <div class="col-lg-5">
+                    <div class="card h-100">
+                        <h4 class="mb-4">Confusion Matrix</h4>
+                        <div class="matrix-grid">
+                            <div class="matrix-cell matrix-header">Actual \ Pred</div>
+                            <div class="matrix-cell matrix-header">POS</div>
+                            <div class="matrix-cell matrix-header">NEG</div>
+                            
+                            <div class="matrix-cell matrix-header">POS</div>
+                            <div class="matrix-cell cell-high">0.94</div>
+                            <div class="matrix-cell cell-low">0.06</div>
+                            
+                            <div class="matrix-cell matrix-header">NEG</div>
+                            <div class="matrix-cell cell-med">0.12</div>
+                            <div class="matrix-cell cell-high">0.88</div>
+                        </div>
+                        <p class="text-secondary small mt-4">Report generated for <strong>DeepSent-RoBERTa v2.1</strong></p>
+                    </div>
+                </div>
+
+                <!-- Deploy Section -->
+                <div class="col-12">
+                    <div class="card bg-surface border-accent" style="border-style: dashed;">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h4 class="mb-2">Deploy Fine-Tuned Classifier</h4>
+                                <p class="text-secondary small mb-0">Push current best weights to AWS SageMaker or ONNX Runtime endpoints.</p>
+                            </div>
+                            <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                                <button class="btn btn-primary px-5">Deploy to Production</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/theme-toggle.js"></script>
+    <script src="assets/js/rtl-toggle.js"></script>
+    <script src="assets/js/animations.js"></script>
+</body>
+</html>
+
+
+

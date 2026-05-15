@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | NLP Sentiment Consultant</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap-grid.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="icon" type="image/png" href="https://img.icons8.com/ios-filled/50/2563eb/brain.png">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-brain text-accent me-2"></i>
+                <span class="text-accent">NLP</span>Consultant
+            </a>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="index.html" class="nav-item">Home <i class="fas fa-chevron-down ms-1" style="font-size: 0.7rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">Layout 1</a>
+                        <a href="home-2.html" class="dropdown-item">Layout 2</a>
+                    </div>
+                </li>
+                <li><a href="services.html" class="nav-item">Services</a></li>
+                <li><a href="models.html" class="nav-item">Models</a></li>
+                <li><a href="domain-adaptation.html" class="nav-item">Domain Adaptation</a></li>
+                <li><a href="blog.html" class="nav-item">Blog</a></li>
+                <li><a href="contact.html" class="nav-item active">Contact</a></li>
+                <li><a href="dashboard.html" class="nav-item">Dashboard</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="rtl-toggle" class="btn btn-outline" style="padding: 0.5rem 1rem;">RTL</button>
+                <button id="theme-toggle" class="btn btn-outline" style="padding: 0.5rem 1rem;">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <a href="signup.html" class="btn btn-primary">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container text-center">
+            <h1 class="display-2">Get in <span class="text-accent">Touch</span></h1>
+            <p class="text-secondary mx-auto" style="max-width: 600px;">Our team of NLP engineers and data scientists is
+                ready to help you deploy state-of-the-art sentiment analysis solutions.</p>
+        </div>
+    </header>
+
+    <section class="section" style="padding-top: 40px;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="card p-0 overflow-hidden reveal">
+                        <div class="row g-0">
+                            <div class="col-md-5 contact-info-sidebar p-5">
+                                <h2 class="mb-4">Consult with an Expert</h2>
+                                <p class="text-secondary mb-5">Ready to optimize your sentiment analysis pipelines? Let's discuss your project requirements.</p>
+                                
+                                <div class="mb-4 d-flex align-items-center gap-3">
+                                    <div class="text-accent"><i class="fas fa-envelope"></i></div>
+                                    <div>
+                                        <p class="small text-secondary mb-0">Email</p>
+                                        <p class="mb-0">research@nlpconsultant.io</p>
+                                    </div>
+                                </div>
+                                <div class="mb-5 d-flex align-items-center gap-3">
+                                    <div class="text-accent"><i class="fas fa-location-dot"></i></div>
+                                    <div>
+                                        <p class="small text-secondary mb-0">Location</p>
+                                        <p class="mb-0">Palo Alto, CA | Global Remote</p>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <p class="small text-secondary mb-3">Connect with us</p>
+                                    <div class="d-flex gap-3">
+                                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-7 p-5">
+                                <form>
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="form-label">Name</label>
+                                                <input type="text" class="form-control" placeholder="John Doe">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="form-label">Email</label>
+                                                <input type="email" class="form-control" placeholder="john@company.com">
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <label class="form-label">Project Type</label>
+                                                <select class="form-control">
+                                                    <option>Model Fine-Tuning</option>
+                                                    <option>Preprocessing Pipeline Audit</option>
+                                                    <option>Domain Adaptation Strategy</option>
+                                                    <option>Other</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <label class="form-label">Message</label>
+                                                <textarea class="form-control" rows="5" placeholder="Tell us about your NLP challenges..."></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <button class="btn btn-primary w-100">Send Inquiry</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="map-container reveal">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.6392906201634!2d-122.14612348469247!3d37.44434143891465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fbb3a3a3a3a3a%3A0x3a3a3a3a3a3a3a3a!2sStanford%20University!5e0!3m2!1sen!2sus!4v1625000000000!5m2!1sen!2sus" 
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="nav-logo mb-4 d-block">
+                        <i class="fas fa-brain text-accent me-2"></i>
+                        <span class="text-accent">NLP</span>Consultant
+                    </a>
+                    <p class="text-secondary" style="max-width: 300px;">Providing specialized NLP engineering and sentiment analysis solutions for the modern enterprise data landscape.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Core Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="models.html">Model Training</a></li>
+                        <li><a href="domain-adaptation.html">Domain Adaptation</a></li>
+                        <li><a href="services.html">Pipeline Audits</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="dashboard.html">Analytics Dashboard</a></li>
+                        <li><a href="blog.html">Technical Blog</a></li>
+                        <li><a href="models.html">Benchmarks</a></li>
+                        <li><a href="contact.html">API Docs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Stay Updated</h4>
+                    <p class="text-secondary mb-3">Join our technical newsletter for the latest in ML research.</p>
+                    <form class="d-flex gap-2">
+                        <input type="email" class="form-control" placeholder="Email Address">
+                        <button class="btn btn-primary">Join</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 NLP Consultant. All rights reserved.</p>
+                <div class="d-flex gap-4">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/theme-toggle.js"></script>
+    <script src="assets/js/rtl-toggle.js"></script>
+</body>
+</html>
+
+
+
+

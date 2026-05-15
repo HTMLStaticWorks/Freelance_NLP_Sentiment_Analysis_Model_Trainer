@@ -1,0 +1,43 @@
+/* 
+    Project: NLP Sentiment Analysis Model Trainer
+    Author: Antigravity
+    Description: CSS-based animations
+*/
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reveal {
+    opacity: 0;
+}
+
+.reveal-visible {
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.glass-panel {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+}
+
+.hover-glow:hover {
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.2);
+}
+
+.metric-card {
+    transition: var(--transition-base);
+}
+
+.metric-card:hover .metric-value {
+    color: var(--accent-color);
+}
