@@ -1,4 +1,4 @@
-﻿/* 
+/* 
     Project: NLP Sentiment Analysis Model Trainer
     Author: Antigravity
     Description: Core Design System & Light Mode Styles
@@ -701,8 +701,15 @@ footer {
 }
 
 @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: .5; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .5;
+    }
 }
 
 .stat-badge {
@@ -731,6 +738,7 @@ footer {
 [data-theme="dark"] .bg-dark-subtle {
     background-color: rgba(15, 23, 42, 0.4) !important;
 }
+
 /* Social Login */
 .social-login-group {
     display: flex;
@@ -752,7 +760,7 @@ footer {
     font-size: 1.5rem;
     transition: var(--transition-base);
     text-decoration: none;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
 }
 
 .btn-social:hover {
@@ -783,7 +791,8 @@ footer {
     letter-spacing: 0.05em;
 }
 
-.divider::before, .divider::after {
+.divider::before,
+.divider::after {
     content: '';
     flex: 1;
     border-bottom: 1px solid var(--border-color);
