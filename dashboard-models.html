@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Models | ML Dashboard</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap-grid.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="icon" type="image/png" href="https://img.icons8.com/ios-filled/50/2563eb/brain.png">
+    
+    <style>
+        .dashboard-wrapper {
+            display: flex;
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+        
+        .dashboard-sidebar {
+            width: 280px;
+            background: var(--surface-color);
+            border-right: 1px solid var(--border-color);
+            padding: 2rem;
+            position: fixed;
+            height: calc(100vh - 80px);
+            overflow-y: auto;
+        }
+        
+        .dashboard-content {
+            flex: 1;
+            margin-left: 280px;
+            padding: 3rem;
+        }
+        
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .sidebar-nav li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.8rem 1.2rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: var(--transition-base);
+        }
+        
+        .sidebar-link:hover, .sidebar-link.active {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--accent-color);
+        }
+        
+        .sidebar-link.text-danger:hover {
+            background: rgba(239, 44, 44, 0.1);
+            color: #ef4444 !important;
+        }
+        
+        .text-danger {
+            color: #ef4444 !important;
+        }
+
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            background: var(--border-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .matrix-cell {
+            background: var(--surface-color);
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .matrix-header {
+            font-weight: 600;
+            background: rgba(15, 23, 42, 0.05);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+        
+        .cell-high { background: rgba(34, 197, 94, 0.2); }
+        .cell-med { background: rgba(234, 179, 8, 0.2); }
+        .cell-low { background: rgba(239, 44, 44, 0.2); }
+        
+        .model-card {
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            background: var(--surface-color);
+            margin-bottom: 1rem;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 0.5rem;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--accent-color);
+        }
+
+        .sidebar-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 1024px) {
+            .sidebar-toggle { display: block; }
+            .dashboard-sidebar {
+                position: fixed;
+                left: -280px;
+                top: 80px;
+                height: calc(100vh - 80px);
+                transition: var(--transition-base);
+                z-index: 1001;
+                width: 280px;
+                box-shadow: 20px 0 40px rgba(0,0,0,0.1);
+            }
+            .dashboard-sidebar.active { left: 0; }
+            .dashboard-content { margin-left: 0; padding: 2rem 1rem; }
+            .sidebar-text { display: inline; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-brain text-accent me-2"></i>
+                <span class="text-accent">NLP</span>Consultant
+            </a>
+            <button class="sidebar-toggle" id="sidebarToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="dashboard-wrapper">
+        <aside class="dashboard-sidebar">
+            <ul class="sidebar-nav">
+                <li><a href="dashboard.html" class="sidebar-link"><i class="fas fa-chart-pie"></i> <span class="sidebar-text">Overview</span></a></li>
+                <li><a href="dashboard-datasets.html" class="sidebar-link"><i class="fas fa-file-upload"></i> <span class="sidebar-text">Datasets</span></a></li>
+                <li><a href="dashboard-models.html" class="sidebar-link active"><i class="fas fa-microchip"></i> <span class="sidebar-text">Models</span></a></li>
+                <li><a href="dashboard-reports.html" class="sidebar-link"><i class="fas fa-table"></i> <span class="sidebar-text">Reports</span></a></li>
+                <li><a href="dashboard-deployment.html" class="sidebar-link"><i class="fas fa-rocket"></i> <span class="sidebar-text">Deployment</span></a></li>
+                <li><a href="login.html" class="sidebar-link text-danger mt-5"><i class="fas fa-sign-out-alt"></i> <span class="sidebar-text">Logout</span></a></li>
+            </ul>
+        </aside>
+
+        <main class="dashboard-content">
+            <div class="d-flex justify-content-between align-items-end mb-5 reveal">
+                <div>
+                    <span class="text-accent fw-600">ARCHITECTURE</span>
+                    <h1 class="h2 mb-0">Model Inventory</h1>
+                </div>
+                <button class="btn btn-primary"><i class="fas fa-microchip me-2"></i>Train New Model</button>
+            </div>
+
+            <div class="row g-4 reveal">
+                <div class="col-lg-7">
+                    <div class="card">
+                        <h4 class="mb-4">Trained Architectures</h4>
+                        
+                        <div class="model-card">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="fw-600">DeepSent-RoBERTa v2.1</span>
+                                <span class="text-accent small">Production</span>
+                            </div>
+                            <p class="text-secondary small mb-3">Optimized for financial lexical nuance.</p>
+                            <div class="progress-bar"><div class="progress-fill" style="width: 98%;"></div></div>
+                            <div class="d-flex justify-content-between mt-2 tiny uppercase text-secondary">
+                                <span>Accuracy: 98.4%</span>
+                                <span>Latency: 12ms</span>
+                            </div>
+                        </div>
+
+                        <div class="model-card">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="fw-600">LegalBERT-Staged</span>
+                                <span class="text-secondary small">Staging</span>
+                            </div>
+                            <p class="text-secondary small mb-3">Tuned for litigation documentation.</p>
+                            <div class="progress-bar"><div class="progress-fill" style="width: 92%;"></div></div>
+                            <div class="d-flex justify-content-between mt-2 tiny uppercase text-secondary">
+                                <span>Accuracy: 92.1%</span>
+                                <span>Latency: 18ms</span>
+                            </div>
+                        </div>
+
+                        <div class="model-card">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="fw-600">CrossDomain-TinyT5</span>
+                                <span class="text-warning small">Draft</span>
+                            </div>
+                            <p class="text-secondary small mb-3">Experimental low-latency transformer.</p>
+                            <div class="progress-bar"><div class="progress-fill" style="width: 45%;"></div></div>
+                            <div class="d-flex justify-content-between mt-2 tiny uppercase text-secondary">
+                                <span>Training: 45%</span>
+                                <span>Est. Accuracy: 88%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="card h-100">
+                        <h4 class="mb-4">Performance Matrix</h4>
+                        <div class="matrix-grid">
+                            <div class="matrix-cell matrix-header">Actual \ Pred</div>
+                            <div class="matrix-cell matrix-header">POS</div>
+                            <div class="matrix-cell matrix-header">NEG</div>
+                            
+                            <div class="matrix-cell matrix-header">POS</div>
+                            <div class="matrix-cell cell-high">0.94</div>
+                            <div class="matrix-cell cell-low">0.06</div>
+                            
+                            <div class="matrix-cell matrix-header">NEG</div>
+                            <div class="matrix-cell cell-med">0.12</div>
+                            <div class="matrix-cell cell-high">0.88</div>
+                        </div>
+                        <p class="text-secondary small mt-4">Current evaluation based on <strong>fintech_validation_set</strong>.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/theme-toggle.js"></script>
+    <script src="assets/js/rtl-toggle.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script>
+        document.getElementById('sidebarToggle').addEventListener('click', function() {
+            document.querySelector('.dashboard-sidebar').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

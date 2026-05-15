@@ -1,4 +1,4 @@
-/* 
+﻿/* 
     Project: NLP Sentiment Analysis Model Trainer
     Author: Antigravity
     Description: Core Design System & Light Mode Styles
@@ -141,6 +141,118 @@ ul {
 .display-2 {
     font-size: 3.5rem;
     letter-spacing: -0.01em;
+}
+
+/* Utilities */
+.d-flex {
+    display: flex !important;
+}
+
+.flex-wrap {
+    flex-wrap: wrap !important;
+}
+
+.justify-content-center {
+    justify-content: center !important;
+}
+
+.justify-content-between {
+    justify-content: space-between !important;
+}
+
+.align-items-center {
+    align-items: center !important;
+}
+
+.gap-1 {
+    gap: 0.25rem !important;
+}
+
+.gap-2 {
+    gap: 0.5rem !important;
+}
+
+.gap-3 {
+    gap: 1rem !important;
+}
+
+.gap-4 {
+    gap: 1.5rem !important;
+}
+
+.gap-5 {
+    gap: 3rem !important;
+}
+
+.w-100 {
+    width: 100% !important;
+}
+
+.mb-0 {
+    margin-bottom: 0 !important;
+}
+
+.mb-1 {
+    margin-bottom: 0.25rem !important;
+}
+
+.mb-2 {
+    margin-bottom: 0.5rem !important;
+}
+
+.mb-3 {
+    margin-bottom: 1rem !important;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem !important;
+}
+
+.mb-5 {
+    margin-bottom: 3rem !important;
+}
+
+.mt-3 {
+    margin-top: 1rem !important;
+}
+
+.mt-4 {
+    margin-top: 1.5rem !important;
+}
+
+.mt-5 {
+    margin-top: 3rem !important;
+}
+
+.ms-1 {
+    margin-left: 0.25rem !important;
+}
+
+.ms-2 {
+    margin-left: 0.5rem !important;
+}
+
+.me-2 {
+    margin-right: 0.5rem !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.mx-auto {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Link Animations */
+a:hover i.fa-arrow-right {
+    transform: translateX(5px);
+}
+
+i.fa-arrow-right {
+    transition: var(--transition-base);
+    display: inline-block;
 }
 
 /* Navbar Styles */
@@ -359,6 +471,16 @@ footer {
 }
 
 /* Blog Specific */
+/* Card Images */
+.card-img-custom {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border-color);
+}
+
 .blog-card-img {
     height: 180px;
     width: 100%;
@@ -447,9 +569,10 @@ footer {
 
 /* Responsive */
 @media (max-width: 1024px) {
-    .nav-links, 
-    .nav-actions .rtl-toggle, 
-    .nav-actions .theme-toggle, 
+
+    .nav-links,
+    .nav-actions .rtl-toggle,
+    .nav-actions .theme-toggle,
     .nav-actions .btn-primary {
         display: none !important;
     }
@@ -563,4 +686,113 @@ footer {
     color: var(--text-primary);
     font-size: 1.5rem;
     cursor: pointer;
+}
+
+/* Section-Specific Helpers */
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: .5; }
+}
+
+.stat-badge {
+    min-width: 120px;
+}
+
+.tiny {
+    font-size: 0.65rem;
+}
+
+.vstack {
+    display: flex;
+    flex-direction: column;
+}
+
+.bg-dark-subtle {
+    background-color: rgba(15, 23, 42, 0.05) !important;
+}
+
+.domain-card {
+    border: 1px solid var(--border-color) !important;
+    background: var(--surface-color);
+    transition: var(--transition-base);
+}
+
+[data-theme="dark"] .bg-dark-subtle {
+    background-color: rgba(15, 23, 42, 0.4) !important;
+}
+/* Social Login */
+.social-login-group {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background: var(--surface-color);
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    transition: var(--transition-base);
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.btn-social:hover {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(37, 99, 235, 0.2);
+}
+
+.btn-social i {
+    transition: transform 0.3s ease;
+}
+
+.btn-social:hover i {
+    transform: scale(1.1);
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 1.5rem 0;
+    color: var(--secondary-color);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.divider:not(:empty)::before {
+    margin-right: 1rem;
+}
+
+.divider:not(:empty)::after {
+    margin-left: 1rem;
 }

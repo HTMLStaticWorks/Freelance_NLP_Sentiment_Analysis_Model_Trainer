@@ -98,38 +98,65 @@
 
     <section class="section">
         <div class="container">
-            <div class="section-header reveal">
-                <span class="text-accent fw-600">SEMANTIC DRIFT</span>
-                <h2 class="display-5">Bridging the Contextual Gap</h2>
-                <p class="text-secondary">Language is fluid. A model trained on Amazon product reviews will
-                    fail to detect sentiment in a Central Bank interest rate announcement because the linguistic
-                    markers of "success" or "failure" have completely shifted.</p>
-            </div>
-            <div class="row justify-content-center align-items-center mb-5 pb-5">
-                <div class="col-lg-6 reveal">
-                    <div class="card bg-surface p-4">
-                        <div class="row g-0">
-                            <div class="col-6 border-end pe-4">
-                                <p class="small text-accent fw-600 mb-2 uppercase">Source (Retail)</p>
-                                <p class="mb-1 text-secondary">"Fast delivery"</p>
-                                <p class="mb-1 text-secondary">"Great build quality"</p>
-                                <p class="text-secondary">"Broken on arrival"</p>
-                            </div>
-                            <div class="col-6 ps-4">
-                                <p class="small text-accent fw-600 mb-2 uppercase">Target (Finance)</p>
-                                <p class="mb-1 text-secondary">"Hawkish stance"</p>
-                                <p class="mb-1 text-secondary">"Liquidity surplus"</p>
-                                <p class="text-secondary">"Market volatility"</p>
-                            </div>
+            <div class="row align-items-center g-5 section">
+                <div class="col-lg-5 reveal">
+                    <span class="text-accent fw-600 mb-3 d-block">SEMANTIC DRIFT</span>
+                    <h2 class="display-4 mb-4">Bridging the <span class="text-accent">Contextual Gap</span></h2>
+                    <p class="text-secondary mb-5 lead">Language is fluid. A model trained on Amazon product reviews will fail to detect sentiment in a Central Bank interest rate announcement because the linguistic markers of "success" or "failure" have completely shifted.</p>
+                    
+                    <div class="d-flex gap-4 mb-4">
+                        <div class="stat-badge p-3 rounded-4 bg-surface border border-accent shadow-sm">
+                            <div class="h3 text-accent mb-0">94%</div>
+                            <div class="tiny text-secondary uppercase fw-600">Lexical Variance</div>
+                        </div>
+                        <div class="stat-badge p-3 rounded-4 bg-surface border border-accent shadow-sm">
+                            <div class="h3 text-accent mb-0">0.12</div>
+                            <div class="tiny text-secondary uppercase fw-600">Cosine Similarity</div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-5 offset-lg-1 mt-5 mt-lg-0">
-                    <div class="glass-panel p-5 reveal text-center">
-                        <div class="display-1 text-accent mb-3 opacity-20"><i class="fas fa-arrows-split-up"></i></div>
-                        <h4>94% Variance</h4>
-                        <p class="text-secondary small">Typical lexical divergence between cross-industry datasets
-                            without adaptation.</p>
+                
+                <div class="col-lg-7 reveal">
+                    <div class="glass-panel p-4 p-md-5 position-relative overflow-hidden">
+                        <div class="position-absolute top-0 end-0 p-4 opacity-10">
+                            <i class="fas fa-random fa-10x"></i>
+                        </div>
+                        
+                        <div class="row g-4 position-relative">
+                            <div class="col-md-6">
+                                <div class="p-4 rounded-4 domain-card h-100">
+                                    <div class="d-flex align-items-center gap-2 mb-3">
+                                        <div class="dot bg-danger"></div>
+                                        <span class="small fw-600 text-secondary">SOURCE DOMAIN</span>
+                                    </div>
+                                    <h5 class="mb-4">Consumer Retail</h5>
+                                    <div class="vstack gap-2">
+                                        <div class="badge bg-surface p-2 text-start border border-light-subtle text-secondary fw-normal">"Fast delivery" <span class="float-end text-success">POS</span></div>
+                                        <div class="badge bg-surface p-2 text-start border border-light-subtle text-secondary fw-normal">"Broken hinge" <span class="float-end text-danger">NEG</span></div>
+                                        <div class="badge bg-surface p-2 text-start border border-light-subtle text-secondary fw-normal">"Great value" <span class="float-end text-success">POS</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="p-4 rounded-4 domain-card h-100 shadow-lg" style="border-color: var(--accent-color) !important;">
+                                    <div class="d-flex align-items-center gap-2 mb-3">
+                                        <div class="dot bg-accent animate-pulse"></div>
+                                        <span class="small fw-600 text-accent">TARGET DOMAIN</span>
+                                    </div>
+                                    <h5 class="mb-4">Central Banking</h5>
+                                    <div class="vstack gap-2">
+                                        <div class="badge bg-surface p-2 text-start border border-light-subtle text-secondary fw-normal">"Hawkish stance" <span class="float-end text-warning">NEU?</span></div>
+                                        <div class="badge bg-surface p-2 text-start border border-light-subtle text-secondary fw-normal">"Liquidity surplus" <span class="float-end text-accent">ADAPT</span></div>
+                                        <div class="badge bg-surface p-2 text-start border border-light-subtle text-secondary fw-normal">"Yield curve" <span class="float-end text-accent">ADAPT</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 pt-4 border-top border-secondary border-opacity-10 text-center">
+                            <p class="small text-secondary mb-0"><i class="fas fa-info-circle me-2"></i> Unadapted models misclassify <span class="text-white fw-600">82%</span> of financial terminology.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -140,88 +167,82 @@
                 <h2 class="display-5">The Adaptation Workflow</h2>
             </div>
             <div class="row g-4 text-center justify-content-center">
-                    <div class="col-md-4">
-                        <div class="card h-100 border-0 bg-surface shadow-sm">
-                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc48?auto=format&fit=crop&q=80&w=800"
-                                alt="Server Data" class="blog-card-img">
-                            <div class="card-body p-0">
-                                <h5 class="mb-3 text-accent">Continual Pre-training</h5>
-                                <p class="text-secondary small">Further pre-training the base model on millions of
-                                    unlabeled target-domain tokens to learn the unique vocabulary.</p>
-                            </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 bg-surface shadow-sm">
+                        <img src="assets/img/pretraining.png" alt="Server Data" class="card-img-custom">
+                        <div class="card-body p-0">
+                            <h5 class="mb-3 text-accent">Continual Pre-training</h5>
+                            <p class="text-secondary small">Further pre-training the base model on millions of
+                                unlabeled target-domain tokens to learn the unique vocabulary.</p>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card h-100 border-accent bg-surface shadow-sm">
-                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800"
-                                alt="Tech Sphere" class="blog-card-img">
-                            <div class="card-body p-0">
-                                <h5 class="mb-3 text-accent">Adversarial Alignment</h5>
-                                <p class="text-secondary small">Using a Domain Discriminator to ensure that the internal
-                                    model representations are domain-invariant.</p>
-                            </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-accent bg-surface shadow-sm">
+                        <img src="assets/img/adversarial.png" alt="Tech Sphere" class="card-img-custom">
+                        <div class="card-body p-0">
+                            <h5 class="mb-3 text-accent">Adversarial Alignment</h5>
+                            <p class="text-secondary small">Using a Domain Discriminator to ensure that the internal
+                                model representations are domain-invariant.</p>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card h-100 border-0 bg-surface shadow-sm">
-                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800"
-                                alt="Circuitry" class="blog-card-img">
-                            <div class="card-body p-0">
-                                <h5 class="mb-3 text-accent">Pivot Selection</h5>
-                                <p class="text-secondary small">Identifying "pivot" features that behave similarly in
-                                    both domains to ground the sentiment transfer.</p>
-                            </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 bg-surface shadow-sm">
+                        <img src="assets/img/pivot.png" alt="Circuitry" class="card-img-custom">
+                        <div class="card-body p-0">
+                            <h5 class="mb-3 text-accent">Pivot Selection</h5>
+                            <p class="text-secondary small">Identifying "pivot" features that behave similarly in
+                                both domains to ground the sentiment transfer.</p>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Section 3: Vertical Excellence Redesign -->
-            <div class="mt-5 pt-5 reveal">
-                <div class="section-header">
-                    <span class="text-accent fw-600">VERTICAL EXCELLENCE</span>
-                    <h2 class="display-5">Ready-to-Deploy Verticals</h2>
-                    <p class="text-secondary">We maintain pre-adapted model
-                        checkpoints for high-stakes industries where precision is non-negotiable and semantic accuracy
-                        is paramount.</p>
+        <!-- Section 3: Vertical Excellence Redesign -->
+        <div class="mt-5 pt-5 reveal">
+            <div class="section-header">
+                <span class="text-accent fw-600">VERTICAL EXCELLENCE</span>
+                <h2 class="display-5">Ready-to-Deploy Verticals</h2>
+                <p class="text-secondary">We maintain pre-adapted model
+                    checkpoints for high-stakes industries where precision is non-negotiable and semantic accuracy
+                    is paramount.</p>
+            </div>
+
+            <div class="row g-4 text-center">
+                <div class="col-lg-4">
+                    <div class="card h-100 hover-lift border-0 bg-surface shadow-sm">
+                        <img src="assets/img/fintech.png" alt="Finance" class="card-img-custom">
+                        <div class="card-body p-0">
+                            <h4 class="mb-3 text-accent">Finance</h4>
+                            <p class="text-secondary small mb-0">Detecting subtle market cues in quarterly reports,
+                                investor calls, and financial news where terminology is highly specialized.</p>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="row g-4 text-center">
-                    <div class="col-lg-4">
-                        <div class="card h-100 hover-lift border-0 bg-surface shadow-sm">
-                            <img src="https://images.unsplash.com/photo-1611974714024-4607a50d6c94?auto=format&fit=crop&q=80&w=800"
-                                alt="Finance" class="blog-card-img">
-                            <div class="card-body p-0">
-                                <h4 class="mb-3 text-accent">Finance</h4>
-                                <p class="text-secondary small mb-0">Detecting subtle market cues in quarterly reports,
-                                    investor calls, and financial news where terminology is highly specialized.</p>
-                            </div>
+                <div class="col-lg-4">
+                    <div class="card h-100 hover-lift border-0 bg-surface shadow-sm">
+                        <img src="assets/img/healthcare.png" alt="Healthcare" class="card-img-custom">
+                        <div class="card-body p-0">
+                            <h4 class="mb-3 text-accent">Healthcare</h4>
+                            <p class="text-secondary small mb-0">Extracting patient sentiment from clinical trials,
+                                healthcare feedback, and medical documentation with strict adherence to context.</p>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="card h-100 hover-lift border-0 bg-surface shadow-sm">
-                            <img src="https://images.unsplash.com/photo-1532187863486-abf8581ad7d7?auto=format&fit=crop&q=80&w=800"
-                                alt="Healthcare" class="blog-card-img">
-                            <div class="card-body p-0">
-                                <h4 class="mb-3 text-accent">Healthcare</h4>
-                                <p class="text-secondary small mb-0">Extracting patient sentiment from clinical trials,
-                                    healthcare feedback, and medical documentation with strict adherence to context.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card h-100 hover-lift border-0 bg-surface shadow-sm">
-                            <img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80&w=800"
-                                alt="Legal" class="blog-card-img">
-                            <div class="card-body p-0">
-                                <h4 class="mb-3 text-accent">Legal</h4>
-                                <p class="text-secondary small mb-0">Monitoring sentiment shifts in legislative
-                                    documentation, litigation proceedings, and regulatory compliance artifacts.</p>
-                            </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card h-100 hover-lift border-0 bg-surface shadow-sm">
+                        <img src="assets/img/legal.png" alt="Legal" class="card-img-custom">
+                        <div class="card-body p-0">
+                            <h4 class="mb-3 text-accent">Legal</h4>
+                            <p class="text-secondary small mb-0">Monitoring sentiment shifts in legislative
+                                documentation, litigation proceedings, and regulatory compliance artifacts.</p>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     </section>
 
     <!-- Footer -->
