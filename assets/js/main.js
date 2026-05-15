@@ -6,13 +6,32 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile Menu Logic
     const menuToggle = document.querySelector('.mobile-toggle');
-    const navLinks = document.querySelector('.nav-links');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileClose = document.querySelector('.mobile-close');
     
-    if (menuToggle) {
+    if (menuToggle && mobileMenu) {
         menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
         });
     }
+
+    if (mobileClose && mobileMenu) {
+        mobileClose.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    }
+
+    // Mobile Dropdown Toggle
+    const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+    mobileDropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            const parent = toggle.closest('.mobile-dropdown');
+            parent.classList.toggle('active');
+        });
+    });
 
     // Scroll Header
     const navbar = document.querySelector('.navbar');

@@ -4,28 +4,28 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    const rtlToggle = document.getElementById('rtl-toggle');
+    const rtlToggles = document.querySelectorAll('.rtl-toggle');
     const htmlElement = document.documentElement;
 
     // Check for saved RTL preference
     const isRTL = localStorage.getItem('rtl-mode') === 'true';
     if (isRTL) {
         htmlElement.setAttribute('dir', 'rtl');
-        rtlToggle.textContent = 'LTR';
+        rtlToggles.forEach(btn => btn.textContent = 'LTR');
     }
 
-    if (rtlToggle) {
-        rtlToggle.addEventListener('click', () => {
+    rtlToggles.forEach(btn => {
+        btn.addEventListener('click', () => {
             const currentlyRTL = htmlElement.getAttribute('dir') === 'rtl';
             if (currentlyRTL) {
                 htmlElement.removeAttribute('dir');
-                rtlToggle.textContent = 'RTL';
+                rtlToggles.forEach(b => b.textContent = 'RTL');
                 localStorage.setItem('rtl-mode', 'false');
             } else {
                 htmlElement.setAttribute('dir', 'rtl');
-                rtlToggle.textContent = 'LTR';
+                rtlToggles.forEach(b => b.textContent = 'LTR');
                 localStorage.setItem('rtl-mode', 'true');
             }
         });
-    }
+    });
 });
