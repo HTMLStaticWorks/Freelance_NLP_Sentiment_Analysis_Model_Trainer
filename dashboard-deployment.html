@@ -165,14 +165,31 @@
                 <i class="fas fa-brain text-accent me-2"></i>
                 <span class="text-accent">NLP</span>Consultant
             </a>
-            <button class="sidebar-toggle" id="sidebarToggle">
-                <i class="fas fa-bars"></i>
-            </button>
+            
+            <div class="dashboard-nav-actions">
+                <button class="rtl-toggle btn btn-outline" style="padding: 0.5rem 1rem;">RTL</button>
+                <button class="theme-toggle btn btn-outline" style="padding: 0.5rem 1rem;">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button class="sidebar-toggle ms-3" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
     </nav>
 
     <div class="dashboard-wrapper">
         <aside class="dashboard-sidebar">
+            <button class="sidebar-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="sidebar-profile">
+                <img src="https://i.pravatar.cc/150?u=nlp-consultant" alt="Author Profile" class="profile-avatar">
+                <div class="profile-info">
+                    <span class="profile-name">Alex Rivers</span>
+                    <span class="profile-role">ML Architect</span>
+                </div>
+            </div>
             <ul class="sidebar-nav">
                 <li><a href="dashboard.html" class="sidebar-link"><i class="fas fa-chart-pie"></i> <span
                             class="sidebar-text">Overview</span></a></li>
@@ -287,11 +304,6 @@
     <script src="assets/js/theme-toggle.js"></script>
     <script src="assets/js/rtl-toggle.js"></script>
     <script src="assets/js/animations.js"></script>
-    <script>
-        document.getElementById('sidebarToggle').addEventListener('click', function () {
-            document.querySelector('.dashboard-sidebar').classList.toggle('active');
-        });
-    </script>
 </body>
 
 </html>

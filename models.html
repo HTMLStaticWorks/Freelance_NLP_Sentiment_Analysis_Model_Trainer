@@ -102,17 +102,16 @@
                 <span class="text-accent fw-600">PHASE 01</span>
                 <h2 class="h1">Model Selection</h2>
             </div>
-            <div class="row g-4 mb-5">
+            <div class="row g-4 mb-5 justify-content-center">
                 <!-- BERT Variant -->
-                <div class="col-lg-4">
-                    <div class="card h-100 reveal">
-                        <div class="mb-4">
+                <div class="col-sm-6 col-lg-4 d-flex">
+                    <div class="card h-100 reveal w-100">
+                        <div class="mb-2">
                             <span class="badge bg-primary px-3 py-1 mb-3">PRODUCTION READY</span>
                         </div>
-                        <h3>Sent-BERT-v4</h3>
-                        <p class="text-secondary small mb-4">Optimized Bidirectional Encoder Representations from
-                            Transformers for robust multi-class sentiment detection.</p>
-                        <div class="border-top pt-4">
+                        <h3>DeepSent-BERT</h3>
+                        <p class="text-secondary small mb-4">Standard BERT architecture fine-tuned on general-purpose sentiment datasets for reliable baseline performance.</p>
+                        <div class="border-top pt-4 mt-auto">
                             <div class="d-flex justify-content-between mb-2">
                                 <span class="small text-secondary">Accuracy</span>
                                 <span class="fw-600">97.8%</span>
@@ -129,17 +128,17 @@
                     </div>
                 </div>
                 <!-- RoBERTa Variant -->
-                <div class="col-lg-4">
-                    <div class="card h-100 reveal featured-card">
+                <div class="col-sm-6 col-lg-4 d-flex">
+                    <div class="card h-100 reveal featured-card w-100">
                         <div class="card-top-strip"></div>
-                        <div class="mb-4">
+                        <div class="mb-2">
                             <span class="badge bg-accent px-3 py-1 mb-3"
                                 style="background: var(--accent-color);">FLAGSHIP</span>
                         </div>
                         <h3>DeepSent-RoBERTa</h3>
                         <p class="text-secondary small mb-4">Robustly Optimized BERT Pretraining Approach tailored for
                             nuanced emotional detection and sarcasm handling.</p>
-                        <div class="border-top pt-4">
+                        <div class="border-top pt-4 mt-auto">
                             <div class="d-flex justify-content-between mb-2">
                                 <span class="small text-secondary">Accuracy</span>
                                 <span class="fw-600">98.9%</span>
@@ -156,15 +155,15 @@
                     </div>
                 </div>
                 <!-- DistilBERT Variant -->
-                <div class="col-lg-4">
-                    <div class="card h-100 reveal">
-                        <div class="mb-4">
+                <div class="col-sm-6 col-lg-4 d-flex">
+                    <div class="card h-100 reveal w-100">
+                        <div class="mb-2">
                             <span class="badge bg-secondary px-3 py-1 mb-3">EDGE OPTIMIZED</span>
                         </div>
                         <h3>LiteSent-v2</h3>
                         <p class="text-secondary small mb-4">A distilled, lightweight model designed for high-throughput
                             API endpoints and client-side processing.</p>
-                        <div class="border-top pt-4">
+                        <div class="border-top pt-4 mt-auto">
                             <div class="d-flex justify-content-between mb-2">
                                 <span class="small text-secondary">Accuracy</span>
                                 <span class="fw-600">94.2%</span>
@@ -182,55 +181,64 @@
                 </div>
             </div>
 
-            <hr class="my-5 border-secondary opacity-10">
+            <hr class="mb-5 mt-0 border-secondary opacity-10">
 
             <div class="section-header reveal mb-4">
                 <span class="text-accent fw-600">PHASE 02</span>
                 <h2 class="h1">Data Preprocessing</h2>
             </div>
-            <div class="row align-items-center section pt-0">
-                <div class="col-lg-6 reveal">
-                    <h2 class="mb-4">The Cleaning <span class="text-accent">Stack</span></h2>
-                    <p class="text-secondary mb-4">Every piece of text processed by our systems undergoes a multi-stage
-                        refinement process to remove noise while preserving semantic intent.</p>
+            <div class="pt-0">
+                <!-- Part 1: Text Content -->
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8 reveal">
+                        <h2 class="mb-4">The Cleaning <span class="text-accent">Stack</span></h2>
+                        <p class="text-secondary mb-4">Every piece of text processed by our systems undergoes a
+                            multi-stage
+                            refinement process to remove noise while preserving semantic intent.</p>
 
-                    <div class="d-flex gap-4 mb-4">
-                        <div class="text-accent"><i class="fas fa-code fa-2x"></i></div>
-                        <div>
-                            <h4 class="mb-1">Noise Reduction</h4>
-                            <p class="text-secondary small">Removal of HTML tags, emojis, special characters, and
-                                non-ASCII artifacts using high-performance regex engines.</p>
+                        <div class="d-flex gap-4 mb-4">
+                            <div class="text-accent"><i class="fas fa-code fa-2x"></i></div>
+                            <div>
+                                <h4 class="mb-1">Noise Reduction</h4>
+                                <p class="text-secondary small">Removal of HTML tags, emojis, special characters, and
+                                    non-ASCII artifacts using high-performance regex engines.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="d-flex gap-4 mb-4">
-                        <div class="text-accent"><i class="fas fa-language fa-2x"></i></div>
-                        <div>
-                            <h4 class="mb-1">Normalization</h4>
-                            <p class="text-secondary small">Case folding, spelling correction, and slang expansion for
-                                colloquial data sources like social media.</p>
+                        <div class="d-flex gap-4 mb-4">
+                            <div class="text-accent"><i class="fas fa-language fa-2x"></i></div>
+                            <div>
+                                <h4 class="mb-1">Normalization</h4>
+                                <p class="text-secondary small">Case folding, spelling correction, and slang expansion
+                                    for
+                                    colloquial data sources like social media.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="d-flex gap-4">
-                        <div class="text-accent"><i class="fas fa-sitemap fa-2x"></i></div>
-                        <div>
-                            <h4 class="mb-1">Tokenization Strategy</h4>
-                            <p class="text-secondary small">WordPiece and Byte-Pair Encoding (BPE) techniques to handle
-                                out-of-vocabulary (OOV) words efficiently.</p>
+                        <div class="d-flex gap-4">
+                            <div class="text-accent"><i class="fas fa-sitemap fa-2x"></i></div>
+                            <div>
+                                <h4 class="mb-1">Tokenization Strategy</h4>
+                                <p class="text-secondary small">WordPiece and Byte-Pair Encoding (BPE) techniques to
+                                    handle
+                                    out-of-vocabulary (OOV) words efficiently.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 mt-5 mt-lg-0">
-                    <div class="code-window reveal">
-                        <div class="code-header">
-                            <div class="code-dots">
-                                <span></span>
-                                <span></span>
-                                <span></span>
+
+                <!-- Part 2: Code Window -->
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="code-window reveal">
+                            <div class="code-header">
+                                <div class="code-dots">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <span class="code-file">preprocessing.py</span>
                             </div>
-                            <span class="code-file">preprocessing.py</span>
-                        </div>
-                        <div class="code-body">
-                            <pre><code><span class="code-comment"># Sample Preprocessing Pipeline</span>
+                            <div class="code-body">
+                                <pre><code><span class="code-comment"># Sample Preprocessing Pipeline</span>
 <span class="code-keyword">def</span> <span class="code-func">clean_text</span>(raw_data):
     <span class="code-comment"># 1. Strip Noise</span>
     text = remove_html(raw_data)
@@ -243,156 +251,6 @@
     tokens = [token.lemma_ <span class="code-keyword">for</span> token <span class="code-keyword">in</span> doc]
     
     <span class="code-keyword">return</span> <span class="code-string">" "</span>.join(tokens)</code></pre>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <hr class="my-5 border-secondary opacity-10">
-            <div class="section-header reveal">
-                <span class="text-accent fw-600">PHASE 03</span>
-                <h2 class="h1">Benchmark Comparison</h2>
-            </div>
-            <div class="row g-4 text-center">
-                <!-- DeepSent-RoBERTa -->
-                <div class="col-12">
-                    <div class="card bg-surface border-accent shadow-lg p-4 reveal">
-                        <div class="row align-items-center">
-                            <div class="col-lg-3 border-end">
-                                <div class="badge bg-accent text-white mb-2 px-3 py-1 rounded-pill small">SOTA LEADER
-                                </div>
-                                <h3 class="mb-1">DeepSent-RoBERTa</h3>
-                                <p class="text-secondary small">Optimized for maximum precision in high-stakes domain
-                                    adaptation.</p>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="row text-center">
-                                    <div class="col-4">
-                                        <div class="h3 mb-0 text-accent">0.99</div>
-                                        <p class="text-secondary tiny uppercase fw-600">Precision</p>
-                                        <div class="progress mt-2"
-                                            style="height: 4px; background: rgba(255,255,255,0.05);">
-                                            <div class="progress-bar bg-accent" style="width: 99%"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="h3 mb-0 text-accent">0.99</div>
-                                        <p class="text-secondary tiny uppercase fw-600">Recall</p>
-                                        <div class="progress mt-2"
-                                            style="height: 4px; background: rgba(255,255,255,0.05);">
-                                            <div class="progress-bar bg-accent" style="width: 99%"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="h3 mb-0 text-accent">0.990</div>
-                                        <p class="text-secondary tiny uppercase fw-600">F1-Score</p>
-                                        <div class="progress mt-2"
-                                            style="height: 4px; background: rgba(255,255,255,0.05);">
-                                            <div class="progress-bar bg-accent" style="width: 99%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 text-end border-start">
-                                <div class="text-secondary small mb-1"><i class="fas fa-microchip me-2"></i>Training
-                                    Time</div>
-                                <div class="h4 mb-0">28h <span class="small text-secondary">(A100)</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Sent-BERT-v4 -->
-                <div class="col-12">
-                    <div class="card bg-surface shadow-sm p-4 reveal">
-                        <div class="row align-items-center">
-                            <div class="col-lg-3 border-end">
-                                <div class="badge bg-secondary text-white mb-2 px-3 py-1 rounded-pill small">BALANCED
-                                </div>
-                                <h3 class="mb-1">Sent-BERT-v4</h3>
-                                <p class="text-secondary small">Versatile transformer architecture for general
-                                    enterprise use.</p>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="row text-center">
-                                    <div class="col-4">
-                                        <div class="h3 mb-0">0.98</div>
-                                        <p class="text-secondary tiny uppercase fw-600">Precision</p>
-                                        <div class="progress mt-2"
-                                            style="height: 4px; background: rgba(255,255,255,0.05);">
-                                            <div class="progress-bar bg-accent" style="width: 98%"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="h3 mb-0">0.97</div>
-                                        <p class="text-secondary tiny uppercase fw-600">Recall</p>
-                                        <div class="progress mt-2"
-                                            style="height: 4px; background: rgba(255,255,255,0.05);">
-                                            <div class="progress-bar bg-accent" style="width: 97%"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="h3 mb-0">0.975</div>
-                                        <p class="text-secondary tiny uppercase fw-600">F1-Score</p>
-                                        <div class="progress mt-2"
-                                            style="height: 4px; background: rgba(255,255,255,0.05);">
-                                            <div class="progress-bar bg-accent" style="width: 97.5%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 text-end border-start">
-                                <div class="text-secondary small mb-1"><i class="fas fa-microchip me-2"></i>Training
-                                    Time</div>
-                                <div class="h4 mb-0">12h <span class="small text-secondary">(A100)</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- LiteSent-v2 -->
-                <div class="col-12">
-                    <div class="card bg-surface shadow-sm p-4 reveal">
-                        <div class="row align-items-center">
-                            <div class="col-lg-3 border-end">
-                                <div class="badge bg-success text-white mb-2 px-3 py-1 rounded-pill small">EFFICIENCY
-                                    LEADER</div>
-                                <h3 class="mb-1">LiteSent-v2</h3>
-                                <p class="text-secondary small">Lightweight architecture optimized for edge inference.
-                                </p>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="row text-center">
-                                    <div class="col-4">
-                                        <div class="h3 mb-0">0.94</div>
-                                        <p class="text-secondary tiny uppercase fw-600">Precision</p>
-                                        <div class="progress mt-2"
-                                            style="height: 4px; background: rgba(255,255,255,0.05);">
-                                            <div class="progress-bar bg-success" style="width: 94%"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="h3 mb-0">0.93</div>
-                                        <p class="text-secondary tiny uppercase fw-600">Recall</p>
-                                        <div class="progress mt-2"
-                                            style="height: 4px; background: rgba(255,255,255,0.05);">
-                                            <div class="progress-bar bg-success" style="width: 93%"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="h3 mb-0">0.935</div>
-                                        <p class="text-secondary tiny uppercase fw-600">F1-Score</p>
-                                        <div class="progress mt-2"
-                                            style="height: 4px; background: rgba(255,255,255,0.05);">
-                                            <div class="progress-bar bg-success" style="width: 93.5%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 text-end border-start">
-                                <div class="text-secondary small mb-1"><i class="fas fa-microchip me-2"></i>Training
-                                    Time</div>
-                                <div class="h4 mb-0">4h <span class="small text-secondary">(A100)</span></div>
                             </div>
                         </div>
                     </div>
@@ -400,7 +258,145 @@
             </div>
         </div>
     </section>
+    <section class="section pt-0">
+        <div class="container">
+            <hr class="mb-5 mt-0 border-secondary opacity-10">
+            <div class="section-header reveal">
+                <span class="text-accent fw-600">PHASE 03</span>
+                <h2 class="h1">Benchmark Comparison</h2>
+            </div>
+            <div class="row g-4 mb-5 justify-content-center">
+                <!-- Benchmark Card 1 -->
+                <div class="col-sm-6 col-lg-4 d-flex">
+                    <div class="card h-100 reveal w-100 benchmark-card">
+                        <div class="icon-box-sm mb-4">
+                            <i class="fas fa-chart-line text-accent"></i>
+                        </div>
+                        <h3 class="h4 mb-2">SST-2 Benchmark</h3>
+                        <p class="text-secondary small mb-4">The Stanford Sentiment Treebank evaluates binary sentiment
+                            classification accuracy on movie review data.</p>
+                        <div class="mt-auto">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="small text-secondary fw-500">RoBERTa Accuracy</span>
+                                <span class="badge bg-accent-soft text-accent">96.8%</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar-fill" style="width: 96.8%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Benchmark Card 2 -->
+                <div class="col-sm-6 col-lg-4 d-flex">
+                    <div class="card h-100 reveal w-100 benchmark-card">
+                        <div class="icon-box-sm mb-4">
+                            <i class="fas fa-database text-accent"></i>
+                        </div>
+                        <h3 class="h4 mb-2">IMDb Dataset</h3>
+                        <p class="text-secondary small mb-4">Testing model robustness on long-form reviews with varied
+                            vocabulary and complex sentence structures.</p>
+                        <div class="mt-auto">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="small text-secondary fw-500">RoBERTa Accuracy</span>
+                                <span class="badge bg-accent-soft text-accent">98.2%</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar-fill" style="width: 98.2%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Benchmark Card 3 -->
+                <div class="col-sm-6 col-lg-4 d-flex">
+                    <div class="card h-100 reveal w-100 benchmark-card">
+                        <div class="icon-box-sm mb-4">
+                            <i class="fas fa-file-invoice-dollar text-accent"></i>
+                        </div>
+                        <h3 class="h4 mb-2">FinPhraseBank</h3>
+                        <p class="text-secondary small mb-4">Specialized benchmark for sentiment detection in financial
+                            news and corporate reports.</p>
+                        <div class="mt-auto">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="small text-secondary fw-500">RoBERTa Accuracy</span>
+                                <span class="badge bg-accent-soft text-accent">92.5%</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar-fill" style="width: 92.5%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Performance Matrix -->
+            <div class="card reveal p-4 p-md-5 performance-matrix-card">
+                <div class="d-flex justify-content-center align-items-center mb-5 flex-wrap gap-3 text-center">
+                    <h3 class="mb-0">Performance <span class="text-accent">Matrix</span></h3>
+                    <div class="badge bg-success-soft text-success px-3 py-2">
+                        <i class="fas fa-check-circle me-2"></i>Verified Result
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-6 col-md-3">
+                        <div class="stat-item justify-content-center">
+                            <div class="stat-icon"><i class="fas fa-bullseye"></i></div>
+                            <div class="stat-content">
+                                <div class="text-secondary small mb-1">Precision</div>
+                                <div class="h3 mb-0 text-accent">0.98</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="stat-item justify-content-center">
+                            <div class="stat-icon"><i class="fas fa-sync"></i></div>
+                            <div class="stat-content">
+                                <div class="text-secondary small mb-1">Recall</div>
+                                <div class="h3 mb-0 text-accent">0.97</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="stat-item justify-content-center">
+                            <div class="stat-icon"><i class="fas fa-medal"></i></div>
+                            <div class="stat-content">
+                                <div class="text-secondary small mb-1">F1-Score</div>
+                                <div class="h3 mb-0 text-accent">0.975</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="stat-item justify-content-center">
+                            <div class="stat-icon"><i class="fas fa-bolt"></i></div>
+                            <div class="stat-content">
+                                <div class="text-secondary small mb-1">Latency</div>
+                                <div class="h3 mb-0 text-accent">18ms</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-5 border-top pt-4">
+                    <div class="row align-items-center justify-content-center text-center g-4">
+                        <div class="col-lg-8">
+                            <div class="d-flex align-items-center justify-content-center gap-3">
+                                <div class="gpu-badge">A100</div>
+                                <p class="text-secondary small mb-0">Standardized evaluation performed on NVIDIA A100
+                                    Tensor Core GPUs with 80GB VRAM.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <a href="#" class="btn btn-primary small">
+                                <i class="fas fa-download me-2"></i>Download Full Report
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -444,12 +440,17 @@
                     </form>
                 </div>
             </div>
+            <!-- 
             <div class="footer-bottom">
                 <p>&copy; 2026 NLP Consultant. All rights reserved.</p>
                 <div class="d-flex gap-4">
                     <a href="#">Privacy Policy</a>
                     <a href="#">Terms of Service</a>
                 </div>
+            </div>
+            -->
+            <div class="footer-bottom justify-content-center">
+                <p>&copy; 2026 NLP Consultant. All rights reserved.</p>
             </div>
         </div>
     </footer>
