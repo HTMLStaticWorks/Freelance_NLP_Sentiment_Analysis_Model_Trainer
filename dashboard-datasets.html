@@ -113,6 +113,49 @@
             font-weight: 600;
         }
 
+        /* Mobile Card View */
+        .mobile-cards {
+            display: none;
+        }
+
+        .mobile-card {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .mobile-card-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .mobile-card-row:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .mobile-card-label {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .mobile-card-value {
+            font-weight: 500;
+            text-align: right;
+            word-break: break-word;
+        }
+
         .sidebar-toggle {
             display: none;
             background: transparent;
@@ -144,11 +187,44 @@
 
             .dashboard-content {
                 margin-left: 0;
-                padding: 2rem 1rem;
+                padding: 1.5rem !important;
             }
 
             .sidebar-text {
                 display: inline;
+            }
+
+            .dashboard-content .d-flex.justify-content-between.align-items-end {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 1.5rem;
+                margin-bottom: 2rem !important;
+            }
+
+            .dashboard-content .btn-primary {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-content {
+                padding: 1rem !important;
+            }
+
+            .upload-zone {
+                padding: 2rem 1rem;
+            }
+
+            .upload-zone h5 {
+                font-size: 1.1rem;
+            }
+
+            .table-responsive {
+                display: none;
+            }
+
+            .mobile-cards {
+                display: block;
             }
         }
     </style>
@@ -266,6 +342,78 @@
                                     </tr>
                                 </tbody>
                             </table>
+                        </div>
+
+                        <!-- Mobile Card View -->
+                        <div class="mobile-cards">
+                            <div class="mobile-card">
+                                <div class="mobile-card-row">
+                                    <span class="mobile-card-label">Name</span>
+                                    <span class="mobile-card-value fw-600">fintech_reviews_v4</span>
+                                </div>
+                                <div class="mobile-card-row">
+                                    <span class="mobile-card-label">Type</span>
+                                    <span class="mobile-card-value">CSV</span>
+                                </div>
+                                <div class="mobile-card-row">
+                                    <span class="mobile-card-label">Samples</span>
+                                    <span class="mobile-card-value">450,230</span>
+                                </div>
+                                <div class="mobile-card-row">
+                                    <span class="mobile-card-label">Status</span>
+                                    <span class="mobile-card-value text-success"><i class="fas fa-check-circle me-1"></i> Ready</span>
+                                </div>
+                                <div class="mobile-card-row">
+                                    <span class="mobile-card-label">Actions</span>
+                                    <span class="mobile-card-value"><a href="#" class="text-accent small">View Details</a></span>
+                                </div>
+                            </div>
+
+                            <div class="mobile-card">
+                                <div class="mobile-card-row">
+                                    <span class="mobile-card-label">Name</span>
+                                    <span class="mobile-card-value fw-600">healthcare_patient_feedback</span>
+                                </div>
+                                <div class="mobile-card-row">
+                                    <span class="mobile-card-label">Type</span>
+                                    <span class="mobile-card-value">JSONL</span>
+                                </div>
+                                <div class="mobile-card-row">
+                                    <span class="mobile-card-label">Samples</span>
+                                    <span class="mobile-card-value">120,400</span>
+                                </div>
+                                <div class="mobile-card-row">
+                                    <span class="mobile-card-label">Status</span>
+                                    <span class="mobile-card-value text-success"><i class="fas fa-check-circle me-1"></i> Ready</span>
+                                </div>
+                                <div class="mobile-card-row">
+                                    <span class="mobile-card-label">Actions</span>
+                                    <span class="mobile-card-value"><a href="#" class="text-accent small">View Details</a></span>
+                                </div>
+                            </div>
+
+                            <div class="mobile-card">
+                                <div class="mobile-card-row">
+                                    <span class="mobile-card-label">Name</span>
+                                    <span class="mobile-card-value fw-600">legal_case_summaries_2024</span>
+                                </div>
+                                <div class="mobile-card-row">
+                                    <span class="mobile-card-label">Type</span>
+                                    <span class="mobile-card-value">Parquet</span>
+                                </div>
+                                <div class="mobile-card-row">
+                                    <span class="mobile-card-label">Samples</span>
+                                    <span class="mobile-card-value">89,000</span>
+                                </div>
+                                <div class="mobile-card-row">
+                                    <span class="mobile-card-label">Status</span>
+                                    <span class="mobile-card-value text-warning"><i class="fas fa-spinner fa-spin me-1"></i> Processing</span>
+                                </div>
+                                <div class="mobile-card-row">
+                                    <span class="mobile-card-label">Actions</span>
+                                    <span class="mobile-card-value"><a href="#" class="text-accent small">Cancel</a></span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -41,7 +41,7 @@
                 </li>
                 <li><a href="services.html" class="nav-item">Services</a></li>
                 <li><a href="models.html" class="nav-item">Models</a></li>
-                <li><a href="domain-adaptation.html" class="nav-item active">Domain Adaptation</a></li>
+                <li><a href="domain-adaptation.html" class="nav-item active">Domain</a></li>
                 <li><a href="blog.html" class="nav-item">Blog</a></li>
                 <li><a href="contact.html" class="nav-item">Contact</a></li>
                 <li><a href="dashboard.html" class="nav-item">Dashboard</a></li>
@@ -74,7 +74,7 @@
             </div>
             <a href="services.html">Services</a>
             <a href="models.html">Models</a>
-            <a href="domain-adaptation.html" class="active">Domain Adaptation</a>
+            <a href="domain-adaptation.html" class="active">Domain</a>
             <a href="blog.html">Blog</a>
             <a href="contact.html">Contact</a>
             <a href="dashboard.html">Dashboard</a>
@@ -98,15 +98,15 @@
 
     <section class="section pt-0">
         <div class="container">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-5 reveal">
-                    <span class="text-accent fw-600 mb-3 d-block">SEMANTIC DRIFT</span>
-                    <h2 class="display-4 mb-4">Bridging the <span class="text-accent">Contextual Gap</span></h2>
-                    <p class="text-secondary mb-5 lead">Language is fluid. A model trained on Amazon product reviews
+            <div class="row align-items-center g-4 justify-content-center adaptation-hero-row">
+                <div class="col-lg-12 col-xl-5 text-center text-xl-start reveal">
+                    <span class="text-accent fw-600 mb-1 d-block text-center text-xl-start">SEMANTIC DRIFT</span>
+                    <h2 class="display-4 mb-2 text-center text-xl-start">Bridging the <span class="text-accent">Contextual Gap</span></h2>
+                    <p class="text-secondary mb-3 lead text-center text-xl-start mx-auto mx-xl-0" style="max-width: 800px;">Language is fluid. A model trained on Amazon product reviews
                         will fail to detect sentiment in a Central Bank interest rate announcement because the
                         linguistic markers of "success" or "failure" have completely shifted.</p>
 
-                    <div class="d-flex gap-4 mb-4">
+                    <div class="d-flex gap-3 mb-1 justify-content-center justify-content-xl-start flex-wrap">
                         <div class="stat-badge p-3 rounded-4 bg-surface border border-accent shadow-sm">
                             <div class="h3 text-accent mb-0">94%</div>
                             <div class="tiny text-secondary uppercase fw-600">Lexical Variance</div>
@@ -118,58 +118,55 @@
                     </div>
                 </div>
 
-                <div class="col-lg-7 reveal">
-                    <div class="glass-panel p-4 p-md-5 position-relative overflow-hidden">
-                        <div class="position-absolute top-0 end-0 p-4 opacity-10">
-                            <i class="fas fa-random fa-10x"></i>
-                        </div>
+                <div class="col-lg-12 col-xl-7 reveal">
+                    <div class="glass-panel p-3 p-md-4 position-relative overflow-hidden">
 
-                        <div class="row g-4 position-relative">
-                            <div class="col-md-6 d-flex">
-                                <div class="p-4 rounded-4 domain-card h-100 w-100">
-                                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <div class="row g-3 position-relative justify-content-center">
+                            <div class="col-sm-6 d-flex">
+                                <div class="p-3 rounded-4 domain-card h-100 w-100 text-center">
+                                    <div class="d-flex align-items-center justify-content-center gap-2 mb-3">
                                         <div class="dot bg-danger"></div>
                                         <span class="small fw-600 text-secondary">SOURCE DOMAIN</span>
                                     </div>
                                     <h5 class="mb-4">Consumer Retail</h5>
                                     <div class="vstack gap-2">
                                         <div
-                                            class="badge bg-surface p-2 text-start border border-light-subtle text-secondary fw-normal">
-                                            "Fast delivery" <span class="float-end text-success">POS</span></div>
+                                            class="badge bg-surface p-2 text-center border border-light-subtle text-secondary fw-normal">
+                                            "Fast delivery" <span class="ms-2 text-success small">POS</span></div>
                                         <div
-                                            class="badge bg-surface p-2 text-start border border-light-subtle text-secondary fw-normal">
-                                            "Broken hinge" <span class="float-end text-danger">NEG</span></div>
+                                            class="badge bg-surface p-2 text-center border border-light-subtle text-secondary fw-normal">
+                                            "Broken hinge" <span class="ms-2 text-danger small">NEG</span></div>
                                         <div
-                                            class="badge bg-surface p-2 text-start border border-light-subtle text-secondary fw-normal">
-                                            "Great value" <span class="float-end text-success">POS</span></div>
+                                            class="badge bg-surface p-2 text-center border border-light-subtle text-secondary fw-normal">
+                                            "Great value" <span class="ms-2 text-success small">POS</span></div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="col-md-6 d-flex">
-                                <div class="p-4 rounded-4 domain-card h-100 w-100 shadow-lg"
+                            <div class="col-sm-6 d-flex">
+                                <div class="p-3 rounded-4 domain-card h-100 w-100 shadow-lg text-center"
                                     style="border-color: var(--accent-color) !important;">
-                                    <div class="d-flex align-items-center gap-2 mb-3">
+                                    <div class="d-flex align-items-center justify-content-center gap-2 mb-3">
                                         <div class="dot bg-accent animate-pulse"></div>
                                         <span class="small fw-600 text-accent">TARGET DOMAIN</span>
                                     </div>
                                     <h5 class="mb-4">Central Banking</h5>
                                     <div class="vstack gap-2">
                                         <div
-                                            class="badge bg-surface p-2 text-start border border-light-subtle text-secondary fw-normal">
-                                            "Hawkish stance" <span class="float-end text-warning">NEU?</span></div>
+                                            class="badge bg-surface p-2 text-center border border-light-subtle text-secondary fw-normal">
+                                            "Hawkish stance" <span class="ms-2 text-warning small">NEU?</span></div>
                                         <div
-                                            class="badge bg-surface p-2 text-start border border-light-subtle text-secondary fw-normal">
-                                            "Liquidity surplus" <span class="float-end text-accent">ADAPT</span></div>
+                                            class="badge bg-surface p-2 text-center border border-light-subtle text-secondary fw-normal">
+                                            "Liquidity surplus" <span class="ms-2 text-accent small">ADAPT</span></div>
                                         <div
-                                            class="badge bg-surface p-2 text-start border border-light-subtle text-secondary fw-normal">
-                                            "Yield curve" <span class="float-end text-accent">ADAPT</span></div>
+                                            class="badge bg-surface p-2 text-center border border-light-subtle text-secondary fw-normal">
+                                            "Yield curve" <span class="ms-2 text-accent small">ADAPT</span></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="mt-4 pt-4 border-top border-secondary border-opacity-10 text-center">
+                        <div class="mt-3 pt-3 border-top border-secondary border-opacity-10 text-center">
                             <p class="small text-secondary mb-0"><i class="fas fa-info-circle me-2"></i> Unadapted
                                 models misclassify <span class="text-white fw-600">82%</span> of financial terminology.
                             </p>
@@ -283,7 +280,7 @@
                     <h4>Core Services</h4>
                     <ul class="footer-links">
                         <li><a href="models.html">Model Training</a></li>
-                        <li><a href="domain-adaptation.html">Domain Adaptation</a></li>
+                        <li><a href="domain-adaptation.html">Domain</a></li>
                         <li><a href="services.html">Pipeline Audits</a></li>
                     </ul>
                 </div>

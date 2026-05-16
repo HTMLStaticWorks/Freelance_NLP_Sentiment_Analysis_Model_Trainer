@@ -99,6 +99,49 @@
             font-weight: 600;
         }
 
+        /* Mobile Card View */
+        .mobile-cards {
+            display: none;
+        }
+
+        .mobile-card {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .mobile-card-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .mobile-card-row:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .mobile-card-label {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .mobile-card-value {
+            font-weight: 500;
+            text-align: right;
+            word-break: break-word;
+        }
+
         .sidebar-toggle {
             display: none;
             background: transparent;
@@ -130,11 +173,42 @@
 
             .dashboard-content {
                 margin-left: 0;
-                padding: 2rem 1rem;
+                padding: 1.5rem !important;
             }
 
             .sidebar-text {
                 display: inline;
+            }
+
+            .dashboard-content .d-flex.justify-content-between.align-items-end {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 1.5rem;
+                margin-bottom: 2rem !important;
+            }
+
+            .dashboard-content .btn-primary {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-content {
+                padding: 1rem !important;
+            }
+
+            .report-table th,
+            .report-table td {
+                padding: 0.8rem;
+                font-size: 0.85rem;
+            }
+
+            .table-responsive {
+                display: none;
+            }
+
+            .mobile-cards {
+                display: block;
             }
         }
     </style>
@@ -253,6 +327,90 @@
                                     </tr>
                                 </tbody>
                             </table>
+                        </div>
+
+                        <!-- Mobile Card View -->
+                        <div class="mobile-cards">
+                            <div class="mobile-card">
+                                <div class="mobile-card-row">
+                                    <span class="mobile-card-label">Report ID</span>
+                                    <span class="mobile-card-value text-secondary small">#REP-0941</span>
+                                </div>
+                                <div class="mobile-card-row">
+                                    <span class="mobile-card-label">Model Version</span>
+                                    <span class="mobile-card-value">DeepSent v2.1</span>
+                                </div>
+                                <div class="mobile-card-row">
+                                    <span class="mobile-card-label">F1 Score</span>
+                                    <span class="mobile-card-value fw-600">0.962</span>
+                                </div>
+                                <div class="mobile-card-row">
+                                    <span class="mobile-card-label">Precision</span>
+                                    <span class="mobile-card-value">0.958</span>
+                                </div>
+                                <div class="mobile-card-row">
+                                    <span class="mobile-card-label">Recall</span>
+                                    <span class="mobile-card-value">0.966</span>
+                                </div>
+                                <div class="mobile-card-row">
+                                    <span class="mobile-card-label">Actions</span>
+                                    <span class="mobile-card-value"><a href="#" class="btn btn-outline" style="padding: 0.3rem 0.8rem; font-size: 0.8rem;">PDF</a></span>
+                                </div>
+                            </div>
+
+                            <div class="mobile-card">
+                                <div class="mobile-card-row">
+                                    <span class="mobile-card-label">Report ID</span>
+                                    <span class="mobile-card-value text-secondary small">#REP-0938</span>
+                                </div>
+                                <div class="mobile-card-row">
+                                    <span class="mobile-card-label">Model Version</span>
+                                    <span class="mobile-card-value">DeepSent v2.0</span>
+                                </div>
+                                <div class="mobile-card-row">
+                                    <span class="mobile-card-label">F1 Score</span>
+                                    <span class="mobile-card-value fw-600">0.941</span>
+                                </div>
+                                <div class="mobile-card-row">
+                                    <span class="mobile-card-label">Precision</span>
+                                    <span class="mobile-card-value">0.935</span>
+                                </div>
+                                <div class="mobile-card-row">
+                                    <span class="mobile-card-label">Recall</span>
+                                    <span class="mobile-card-value">0.947</span>
+                                </div>
+                                <div class="mobile-card-row">
+                                    <span class="mobile-card-label">Actions</span>
+                                    <span class="mobile-card-value"><a href="#" class="btn btn-outline" style="padding: 0.3rem 0.8rem; font-size: 0.8rem;">PDF</a></span>
+                                </div>
+                            </div>
+
+                            <div class="mobile-card">
+                                <div class="mobile-card-row">
+                                    <span class="mobile-card-label">Report ID</span>
+                                    <span class="mobile-card-value text-secondary small">#REP-0912</span>
+                                </div>
+                                <div class="mobile-card-row">
+                                    <span class="mobile-card-label">Model Version</span>
+                                    <span class="mobile-card-value">LegalBERT v1.4</span>
+                                </div>
+                                <div class="mobile-card-row">
+                                    <span class="mobile-card-label">F1 Score</span>
+                                    <span class="mobile-card-value fw-600">0.892</span>
+                                </div>
+                                <div class="mobile-card-row">
+                                    <span class="mobile-card-label">Precision</span>
+                                    <span class="mobile-card-value">0.884</span>
+                                </div>
+                                <div class="mobile-card-row">
+                                    <span class="mobile-card-label">Recall</span>
+                                    <span class="mobile-card-value">0.901</span>
+                                </div>
+                                <div class="mobile-card-row">
+                                    <span class="mobile-card-label">Actions</span>
+                                    <span class="mobile-card-value"><a href="#" class="btn btn-outline" style="padding: 0.3rem 0.8rem; font-size: 0.8rem;">PDF</a></span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

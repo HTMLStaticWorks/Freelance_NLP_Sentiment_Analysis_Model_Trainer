@@ -32,7 +32,7 @@ mobile_menu = """    <!-- Mobile Menu -->
             </div>
             <a href="services.html">Services</a>
             <a href="models.html">Models</a>
-            <a href="domain-adaptation.html">Domain Adaptation</a>
+            <a href="domain-adaptation.html">Domain</a>
             <a href="blog.html">Blog</a>
             <a href="contact.html">Contact</a>
             <a href="dashboard.html">Dashboard</a>

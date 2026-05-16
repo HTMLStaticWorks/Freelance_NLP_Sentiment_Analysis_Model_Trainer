@@ -167,11 +167,36 @@
 
             .dashboard-content {
                 margin-left: 0;
-                padding: 2rem 1rem;
+                padding: 1.5rem !important;
             }
 
             .sidebar-text {
                 display: inline;
+            }
+
+            .dashboard-content .d-flex.justify-content-between.align-items-end {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 1.5rem;
+                margin-bottom: 2rem !important;
+            }
+
+            .dashboard-content .btn-primary {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-content {
+                padding: 1rem !important;
+            }
+
+            .matrix-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .model-card {
+                padding: 1rem;
             }
         }
     </style>
