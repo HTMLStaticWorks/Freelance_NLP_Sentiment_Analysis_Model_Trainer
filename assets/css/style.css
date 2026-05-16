@@ -28,6 +28,8 @@
     --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+
+
 /* RTL Support */
 [dir="rtl"] {
     text-align: right;
@@ -393,6 +395,8 @@ i.fa-arrow-right {
     border-radius: 12px;
     padding: 2rem;
     transition: var(--transition-base);
+    display: flex;
+    flex-direction: column;
 }
 
 .card:hover {
@@ -541,7 +545,7 @@ footer {
 }
 
 .blog-card-img {
-    height: 180px;
+    height: 220px;
     width: 100%;
     object-fit: cover;
     border-radius: 8px;
@@ -1103,4 +1107,251 @@ footer {
 
 .divider:not(:empty)::after {
     margin-left: 1rem;
+}
+
+
+/* --- RESPONSIVE REFACTOR (Strict Breakpoints) --- */
+
+/* Global Responsive Safety (Applies to all small screens) */
+@media (max-width: 1024px) {
+
+    html,
+    body {
+        overflow-x: clip;
+        width: 100%;
+        position: relative;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    img,
+    video,
+    svg,
+    canvas {
+        max-width: 100% !important;
+        height: auto;
+    }
+
+    /* Prevent text overflow */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span,
+    a {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-word;
+    }
+
+    /* Standardized Card Safety */
+    .card,
+    .feature-card,
+    .service-card,
+    .stat-card,
+    .blog-card {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+    }
+}
+
+/* Tablet Landscape Optimization (992px - 1024px) */
+@media (min-width: 992px) and (max-width: 1024px) {
+    .container {
+        max-width: 980px !important;
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+    }
+
+    /* Target 3-card sections (Blog, Services, features) */
+    .row>.col-lg-4,
+    .row>.col-md-6.col-lg-4 {
+        flex: 0 0 33.333333% !important;
+        max-width: 33.333333% !important;
+        width: 33.333333% !important;
+    }
+
+    /* Hero Optimization for Landscape */
+    .hero-title {
+        font-size: clamp(48px, 5vw, 64px) !important;
+        max-width: 850px !important;
+        margin-inline: auto !important;
+    }
+
+    /* Dashboard Surgical Fix */
+    .dashboard-sidebar {
+        display: none !important;
+    }
+
+    .dashboard-content {
+        margin-left: 0 !important;
+        width: 100% !important;
+        padding: 2.5rem !important;
+    }
+}
+
+/* Tablet Specific (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    :root {
+        --section-padding: 80px 0;
+    }
+
+    .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    /* Proper Tablet Grids - 2 Columns */
+    .row {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        margin-left: -12px;
+        margin-right: -12px;
+    }
+
+    /* Target card columns specifically */
+    .row>[class*="col-"] {
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+        padding: 12px !important;
+        width: 50% !important;
+    }
+
+    /* Exceptions for wider elements if needed */
+    .row>.col-lg-12,
+    .row>.col-12 {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Hero Section Tablet Optimization */
+    .hero {
+        padding: 120px 0 60px !important;
+    }
+
+    .hero h1 {
+        font-size: clamp(42px, 5vw, 56px) !important;
+        line-height: 1.1;
+    }
+
+    .hero-buttons {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 16px !important;
+        justify-content: center;
+    }
+
+    /* Dashboard Tablet Specifics */
+    .dashboard-wrapper {
+        padding-top: 70px !important;
+    }
+
+    .dashboard-sidebar {
+        display: none !important;
+        /* Keep hidden on tablet by default */
+    }
+
+    .dashboard-content {
+        margin-left: 0 !important;
+        width: 100% !important;
+        padding: 2rem !important;
+    }
+
+    /* Navigation */
+    .nav-links,
+    .nav-actions .btn-primary,
+    .nav-actions .theme-toggle,
+    .nav-actions .rtl-toggle {
+        display: none !important;
+    }
+
+    .mobile-toggle {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    /* Tables */
+    .table-responsive {
+        overflow-x: auto !important;
+        width: 100% !important;
+        margin-bottom: 1.5rem;
+    }
+
+    .data-table,
+    .report-table {
+        min-width: 800px !important;
+    }
+}
+
+/* Mobile Specific (Up to 767px) */
+@media (max-width: 767px) {
+    :root {
+        --section-padding: 60px 0;
+    }
+
+    .container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    /* 1-Column Stack for Mobile */
+    .row>* {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem !important;
+    }
+
+    .dashboard-content {
+        padding: 1rem !important;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr !important;
+        text-align: center;
+    }
+
+    .footer-col {
+        align-items: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        text-align: center !important;
+    }
+
+    .partners-grid {
+        justify-content: center !important;
+        gap: 2rem !important;
+    }
+
+    .partner-item {
+        min-width: 120px !important;
+    }
+
+    .mobile-menu {
+        width: 100% !important;
+        max-width: 100vw !important;
+    }
+
+    /* Blog & Detail Image Containment */
+    [style*="padding-top: 160px"] {
+        padding-top: 80px !important;
+    }
 }
