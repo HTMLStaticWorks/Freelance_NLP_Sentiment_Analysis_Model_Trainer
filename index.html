@@ -95,7 +95,7 @@
     </div>
 
     <!-- Hero Section -->
-    <header class="hero">
+    <header class="hero hero-home">
         <div class="container">
             <div class="row justify-content-center text-center">
                 <div class="col-lg-10">
@@ -152,14 +152,25 @@
     </header>
 
     <!-- Partners Section -->
-    <section class="py-5 border-bottom border-top" style="background: rgba(15, 23, 42, 0.02);">
+    <section class="partners-section">
         <div class="container">
-            <div class="d-flex justify-content-between align-items-center opacity-50 grayscale flex-wrap gap-4">
-                <span class="h4">DATALAB</span>
-                <span class="h4">NEURALCORE</span>
-                <span class="h4">ALGORITHMIC</span>
-                <span class="h4">SYNERGY</span>
-                <span class="h4">VECTRA</span>
+            <h5 class="partners-title">STRATEGIC PARTNERS & INTEGRATIONS</h5>
+            <div class="partners-grid">
+                <div class="partner-item">
+                    <span class="partner-name">DATALAB</span>
+                </div>
+                <div class="partner-item">
+                    <span class="partner-name">NEURALCORE</span>
+                </div>
+                <div class="partner-item">
+                    <span class="partner-name">ALGORITHMIC</span>
+                </div>
+                <div class="partner-item">
+                    <span class="partner-name">SYNERGY</span>
+                </div>
+                <div class="partner-item">
+                    <span class="partner-name">VECTRA</span>
+                </div>
             </div>
         </div>
     </section>
@@ -173,7 +184,7 @@
         </div>
         <div class="container">
             <div class="row g-4">
-                <div class="col-md-4">
+                <div class="col-md-6 col-lg-4">
                     <div class="card reveal">
                         <img src="assets/img/preprocessing.png" alt="Preprocessing Pipelines" class="card-img-custom">
                         <h3>Preprocessing Pipelines</h3>
@@ -183,7 +194,7 @@
                                 class="fas fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6 col-lg-4">
                     <div class="card reveal">
                         <img src="assets/img/finetuning.png" alt="Model Fine-Tuning" class="card-img-custom">
                         <h3>Model Fine-Tuning</h3>
@@ -193,7 +204,7 @@
                                 class="fas fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6 col-lg-4 offset-md-3 offset-lg-0">
                     <div class="card reveal">
                         <img src="assets/img/adaptation.png" alt="Domain Adaptation" class="card-img-custom">
                         <h3>Domain Adaptation</h3>
@@ -299,37 +310,37 @@
                 <div class="col-lg-7">
                     <div class="row g-3">
                         <div class="col-6 col-md-4">
-                            <div class="glass-panel p-4 text-center reveal">
+                            <div class="glass-panel p-4 text-center reveal brand-item brand-aws">
                                 <i class="fab fa-aws fa-3x mb-3 text-secondary"></i>
                                 <p class="small fw-600">AWS</p>
                             </div>
                         </div>
                         <div class="col-6 col-md-4">
-                            <div class="glass-panel p-4 text-center reveal">
+                            <div class="glass-panel p-4 text-center reveal brand-item brand-google">
                                 <i class="fab fa-google fa-3x mb-3 text-secondary"></i>
                                 <p class="small fw-600">Google Cloud</p>
                             </div>
                         </div>
                         <div class="col-6 col-md-4">
-                            <div class="glass-panel p-4 text-center reveal">
+                            <div class="glass-panel p-4 text-center reveal brand-item brand-python">
                                 <i class="fab fa-python fa-3x mb-3 text-secondary"></i>
                                 <p class="small fw-600">Python</p>
                             </div>
                         </div>
                         <div class="col-6 col-md-4">
-                            <div class="glass-panel p-4 text-center reveal">
+                            <div class="glass-panel p-4 text-center reveal brand-item brand-snowflake">
                                 <i class="fas fa-database fa-3x mb-3 text-secondary"></i>
                                 <p class="small fw-600">Snowflake</p>
                             </div>
                         </div>
                         <div class="col-6 col-md-4">
-                            <div class="glass-panel p-4 text-center reveal">
+                            <div class="glass-panel p-4 text-center reveal brand-item brand-docker">
                                 <i class="fab fa-docker fa-3x mb-3 text-secondary"></i>
                                 <p class="small fw-600">Docker</p>
                             </div>
                         </div>
                         <div class="col-6 col-md-4">
-                            <div class="glass-panel p-4 text-center reveal">
+                            <div class="glass-panel p-4 text-center reveal brand-item brand-git">
                                 <i class="fab fa-git fa-3x mb-3 text-secondary"></i>
                                 <p class="small fw-600">GitOps</p>
                             </div>
@@ -349,31 +360,47 @@
             </div>
             <div class="row g-4">
                 <div class="col-lg-6">
-                    <div class="card p-5 reveal h-100">
-                        <i class="fas fa-quote-left text-accent fa-2x mb-4 opacity-50"></i>
-                        <p class="lead text-secondary mb-4">"The sentiment adaptation pipelines provided by the team
+                    <div class="card p-5 reveal h-100 testimonial-item">
+                        <div class="d-flex gap-1 text-warning mb-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <i class="fas fa-quote-left text-accent fa-2x mb-4 opacity-25"></i>
+                        <p class="lead text-secondary mb-5">"The sentiment adaptation pipelines provided by the team
                             allowed us to hit 95% accuracy in our financial niche within weeks, a task that previously
                             took our internal team months."</p>
-                        <div class="d-flex align-items-center gap-3">
-                            <div class="avatar bg-accent rounded-circle" style="width: 50px; height: 50px;"></div>
+                        <div class="d-flex align-items-center gap-3 mt-auto">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100&h=100" 
+                                 alt="Dr. Helena Vance" class="rounded-circle border" style="width: 60px; height: 60px; object-fit: cover;">
                             <div>
                                 <h5 class="mb-0">Dr. Helena Vance</h5>
-                                <p class="small text-secondary mb-0">Director of AI, Global FinBank</p>
+                                <p class="small text-secondary mb-0 fw-600">Director of AI, Global FinBank</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="card p-5 reveal h-100">
-                        <i class="fas fa-quote-left text-accent fa-2x mb-4 opacity-50"></i>
-                        <p class="lead text-secondary mb-4">"Deployment of transformer models on the edge was our
+                    <div class="card p-5 reveal h-100 testimonial-item">
+                        <div class="d-flex gap-1 text-warning mb-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <i class="fas fa-quote-left text-accent fa-2x mb-4 opacity-25"></i>
+                        <p class="lead text-secondary mb-5">"Deployment of transformer models on the edge was our
                             biggest bottleneck. Their ONNX optimization strategy reduced our latency by 60% without any
                             drop in F1-score."</p>
-                        <div class="d-flex align-items-center gap-3">
-                            <div class="avatar bg-accent rounded-circle" style="width: 50px; height: 50px;"></div>
+                        <div class="d-flex align-items-center gap-3 mt-auto">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=100&h=100" 
+                                 alt="Marcus Thorne" class="rounded-circle border" style="width: 60px; height: 60px; object-fit: cover;">
                             <div>
                                 <h5 class="mb-0">Marcus Thorne</h5>
-                                <p class="small text-secondary mb-0">Senior ML Engineer, TechStream</p>
+                                <p class="small text-secondary mb-0 fw-600">Senior ML Engineer, TechStream</p>
                             </div>
                         </div>
                     </div>

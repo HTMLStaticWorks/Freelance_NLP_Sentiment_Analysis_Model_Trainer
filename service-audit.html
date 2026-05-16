@@ -33,14 +33,46 @@
                 <li><a href="dashboard.html" class="nav-item">Dashboard</a></li>
             </ul>
             <div class="nav-actions">
-                <button id="rtl-toggle" class="btn btn-outline" style="padding: 0.5rem 1rem;">RTL</button>
-                <button id="theme-toggle" class="btn btn-outline" style="padding: 0.5rem 1rem;">
+                <button class="rtl-toggle btn btn-outline" style="padding: 0.5rem 1rem;">RTL</button>
+                <button class="theme-toggle btn btn-outline" style="padding: 0.5rem 1rem;">
                     <i class="fas fa-sun"></i>
                 </button>
                 <a href="signup.html" class="btn btn-primary">Sign Up</a>
+                <button class="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <button class="mobile-close">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="mobile-menu-links">
+            <div class="mobile-dropdown">
+                <a href="#" class="mobile-dropdown-toggle">Home <i class="fas fa-chevron-down ms-2"></i></a>
+                <div class="mobile-dropdown-menu">
+                    <a href="index.html">Layout 1</a>
+                    <a href="home-2.html">Layout 2</a>
+                </div>
+            </div>
+            <a href="services.html">Services</a>
+            <a href="models.html">Models</a>
+            <a href="domain-adaptation.html">Domain Adaptation</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+            <a href="dashboard.html">Dashboard</a>
+        </div>
+        <div class="mobile-menu-actions">
+            <button class="rtl-toggle btn btn-outline w-100">RTL</button>
+            <button class="theme-toggle btn btn-outline w-100">
+                <i class="fas fa-sun"></i> Theme
+            </button>
+            <a href="signup.html" class="btn btn-primary w-100">Sign Up</a>
+        </div>
+    </div>
 
     <section class="section" style="padding-top: 160px;">
         <div class="container">
@@ -63,8 +95,8 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="card p-4 sticky-top" style="top: 120px;">
+                <div class="col-lg-4 sidebar-col">
+                    <div class="card p-4 sticky-top" style="top: 180px;">
                         <h4 class="mb-4">Audit Package</h4>
                         <ul class="list-unstyled">
                             <li class="mb-3"><i class="fas fa-check text-accent me-2"></i> Bias & Fairness Auditing</li>
@@ -131,7 +163,12 @@
         </div>
     </footer>
 
+        <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="assets/js/main.js"></script>
     <script src="assets/js/theme-toggle.js"></script>
     <script src="assets/js/rtl-toggle.js"></script>
+    <script src="assets/js/animations.js"></script>
 </body>
 </html>

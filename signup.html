@@ -19,9 +19,16 @@
 </head>
 <body style="display: flex; align-items: center; justify-content: center; min-height: 100vh; background: var(--bg-color);">
 
-    <div class="container">
+    <div class="page-toggles">
+        <button class="rtl-toggle btn btn-outline" style="padding: 0.5rem 1rem;">RTL</button>
+        <button class="theme-toggle btn btn-outline" style="padding: 0.5rem 1rem;">
+            <i class="fas fa-sun"></i>
+        </button>
+    </div>
+
+    <div class="container py-5">
         <div class="row justify-content-center">
-            <div class="col-md-5">
+            <div class="col-md-8 col-lg-5">
                 <div class="card p-5">
                     <div class="text-center mb-5">
                         <a href="index.html" class="nav-logo mb-3 d-block mx-auto" style="width: fit-content;">
@@ -34,15 +41,20 @@
                     <form>
                         <div class="form-group">
                             <label class="form-label">Full Name</label>
-                            <input type="text" class="form-control" placeholder="John Doe">
+                            <input type="text" class="form-control" placeholder="">
                         </div>
                         <div class="form-group">
                             <label class="form-label">Organization Email</label>
-                            <input type="email" class="form-control" placeholder="name@company.com">
+                            <input type="email" class="form-control" placeholder="">
                         </div>
                         <div class="form-group">
                             <label class="form-label">Desired Password</label>
-                            <input type="password" class="form-control" placeholder="••••••••">
+                            <div class="password-wrapper">
+                                <input type="password" class="form-control" placeholder="">
+                                <button type="button" class="password-toggle">
+                                    <i class="far fa-eye"></i>
+                                </button>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label class="form-label">Primary NLP Use-Case</label>
@@ -52,6 +64,12 @@
                                 <option>Market Research</option>
                                 <option>Academic Research</option>
                             </select>
+                        </div>
+                        <div class="form-group d-flex align-items-start gap-2 mb-4">
+                            <input type="checkbox" id="terms" style="margin-top: 4px; accent-color: var(--accent-color); cursor: pointer;" required>
+                            <label for="terms" class="small text-secondary" style="cursor: pointer;">
+                                I agree to the <a href="#" class="text-accent">Terms of Service</a> and <a href="#" class="text-accent">Privacy Policy</a>
+                            </label>
                         </div>
                         <button class="btn btn-primary w-100 mb-4">Request Credentials</button>
 
@@ -77,6 +95,7 @@
 
     <script src="assets/js/theme-toggle.js"></script>
     <script src="assets/js/rtl-toggle.js"></script>
+    <script src="assets/js/password-toggle.js"></script>
 </body>
 </html>
 

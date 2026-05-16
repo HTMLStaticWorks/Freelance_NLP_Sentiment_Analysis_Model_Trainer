@@ -88,7 +88,7 @@
         </div>
     </div>
 
-    <header class="hero">
+    <header class="hero" style="padding-bottom: 40px;">
         <div class="container text-center">
             <h1 class="display-2">Domain <span class="text-accent">Adaptation</span></h1>
             <p class="text-secondary mx-auto" style="max-width: 700px;">Transferring sentiment intelligence across
@@ -96,14 +96,16 @@
         </div>
     </header>
 
-    <section class="section">
+    <section class="section pt-0">
         <div class="container">
-            <div class="row align-items-center g-5 section">
+            <div class="row align-items-center g-5">
                 <div class="col-lg-5 reveal">
                     <span class="text-accent fw-600 mb-3 d-block">SEMANTIC DRIFT</span>
                     <h2 class="display-4 mb-4">Bridging the <span class="text-accent">Contextual Gap</span></h2>
-                    <p class="text-secondary mb-5 lead">Language is fluid. A model trained on Amazon product reviews will fail to detect sentiment in a Central Bank interest rate announcement because the linguistic markers of "success" or "failure" have completely shifted.</p>
-                    
+                    <p class="text-secondary mb-5 lead">Language is fluid. A model trained on Amazon product reviews
+                        will fail to detect sentiment in a Central Bank interest rate announcement because the
+                        linguistic markers of "success" or "failure" have completely shifted.</p>
+
                     <div class="d-flex gap-4 mb-4">
                         <div class="stat-badge p-3 rounded-4 bg-surface border border-accent shadow-sm">
                             <div class="h3 text-accent mb-0">94%</div>
@@ -115,47 +117,62 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-7 reveal">
                     <div class="glass-panel p-4 p-md-5 position-relative overflow-hidden">
                         <div class="position-absolute top-0 end-0 p-4 opacity-10">
                             <i class="fas fa-random fa-10x"></i>
                         </div>
-                        
+
                         <div class="row g-4 position-relative">
-                            <div class="col-md-6">
-                                <div class="p-4 rounded-4 domain-card h-100">
+                            <div class="col-md-6 d-flex">
+                                <div class="p-4 rounded-4 domain-card h-100 w-100">
                                     <div class="d-flex align-items-center gap-2 mb-3">
                                         <div class="dot bg-danger"></div>
                                         <span class="small fw-600 text-secondary">SOURCE DOMAIN</span>
                                     </div>
                                     <h5 class="mb-4">Consumer Retail</h5>
                                     <div class="vstack gap-2">
-                                        <div class="badge bg-surface p-2 text-start border border-light-subtle text-secondary fw-normal">"Fast delivery" <span class="float-end text-success">POS</span></div>
-                                        <div class="badge bg-surface p-2 text-start border border-light-subtle text-secondary fw-normal">"Broken hinge" <span class="float-end text-danger">NEG</span></div>
-                                        <div class="badge bg-surface p-2 text-start border border-light-subtle text-secondary fw-normal">"Great value" <span class="float-end text-success">POS</span></div>
+                                        <div
+                                            class="badge bg-surface p-2 text-start border border-light-subtle text-secondary fw-normal">
+                                            "Fast delivery" <span class="float-end text-success">POS</span></div>
+                                        <div
+                                            class="badge bg-surface p-2 text-start border border-light-subtle text-secondary fw-normal">
+                                            "Broken hinge" <span class="float-end text-danger">NEG</span></div>
+                                        <div
+                                            class="badge bg-surface p-2 text-start border border-light-subtle text-secondary fw-normal">
+                                            "Great value" <span class="float-end text-success">POS</span></div>
                                     </div>
                                 </div>
                             </div>
-                            
-                            <div class="col-md-6">
-                                <div class="p-4 rounded-4 domain-card h-100 shadow-lg" style="border-color: var(--accent-color) !important;">
+
+                            <div class="col-md-6 d-flex">
+                                <div class="p-4 rounded-4 domain-card h-100 w-100 shadow-lg"
+                                    style="border-color: var(--accent-color) !important;">
                                     <div class="d-flex align-items-center gap-2 mb-3">
                                         <div class="dot bg-accent animate-pulse"></div>
                                         <span class="small fw-600 text-accent">TARGET DOMAIN</span>
                                     </div>
                                     <h5 class="mb-4">Central Banking</h5>
                                     <div class="vstack gap-2">
-                                        <div class="badge bg-surface p-2 text-start border border-light-subtle text-secondary fw-normal">"Hawkish stance" <span class="float-end text-warning">NEU?</span></div>
-                                        <div class="badge bg-surface p-2 text-start border border-light-subtle text-secondary fw-normal">"Liquidity surplus" <span class="float-end text-accent">ADAPT</span></div>
-                                        <div class="badge bg-surface p-2 text-start border border-light-subtle text-secondary fw-normal">"Yield curve" <span class="float-end text-accent">ADAPT</span></div>
+                                        <div
+                                            class="badge bg-surface p-2 text-start border border-light-subtle text-secondary fw-normal">
+                                            "Hawkish stance" <span class="float-end text-warning">NEU?</span></div>
+                                        <div
+                                            class="badge bg-surface p-2 text-start border border-light-subtle text-secondary fw-normal">
+                                            "Liquidity surplus" <span class="float-end text-accent">ADAPT</span></div>
+                                        <div
+                                            class="badge bg-surface p-2 text-start border border-light-subtle text-secondary fw-normal">
+                                            "Yield curve" <span class="float-end text-accent">ADAPT</span></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="mt-4 pt-4 border-top border-secondary border-opacity-10 text-center">
-                            <p class="small text-secondary mb-0"><i class="fas fa-info-circle me-2"></i> Unadapted models misclassify <span class="text-white fw-600">82%</span> of financial terminology.</p>
+                            <p class="small text-secondary mb-0"><i class="fas fa-info-circle me-2"></i> Unadapted
+                                models misclassify <span class="text-white fw-600">82%</span> of financial terminology.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -167,7 +184,7 @@
                 <h2 class="display-5">The Adaptation Workflow</h2>
             </div>
             <div class="row g-4 text-center justify-content-center">
-                <div class="col-md-4">
+                <div class="col-md-6 col-lg-4">
                     <div class="card h-100 border-0 bg-surface shadow-sm">
                         <img src="assets/img/pretraining.png" alt="Server Data" class="card-img-custom">
                         <div class="card-body p-0">
@@ -177,7 +194,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6 col-lg-4">
                     <div class="card h-100 border-accent bg-surface shadow-sm">
                         <img src="assets/img/adversarial.png" alt="Tech Sphere" class="card-img-custom">
                         <div class="card-body p-0">
@@ -187,13 +204,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6 col-lg-4">
                     <div class="card h-100 border-0 bg-surface shadow-sm">
                         <img src="assets/img/pivot.png" alt="Circuitry" class="card-img-custom">
                         <div class="card-body p-0">
                             <h5 class="mb-3 text-accent">Pivot Selection</h5>
                             <p class="text-secondary small">Identifying "pivot" features that behave similarly in
-                                both domains to ground the sentiment transfer.</p>
+                                both domains to ground the sentiment transfer variable.</p>
                         </div>
                     </div>
                 </div>
@@ -210,8 +227,8 @@
                     is paramount.</p>
             </div>
 
-            <div class="row g-4 text-center">
-                <div class="col-lg-4">
+            <div class="row g-4 text-center justify-content-center">
+                <div class="col-md-6 col-lg-4">
                     <div class="card h-100 hover-lift border-0 bg-surface shadow-sm">
                         <img src="assets/img/fintech.png" alt="Finance" class="card-img-custom">
                         <div class="card-body p-0">
@@ -221,17 +238,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-md-6 col-lg-4">
                     <div class="card h-100 hover-lift border-0 bg-surface shadow-sm">
                         <img src="assets/img/healthcare.png" alt="Healthcare" class="card-img-custom">
                         <div class="card-body p-0">
                             <h4 class="mb-3 text-accent">Healthcare</h4>
                             <p class="text-secondary small mb-0">Extracting patient sentiment from clinical trials,
-                                healthcare feedback, and medical documentation with strict adherence to context.</p>
+                                healthcare feedback, and medical documentation strictly.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-md-6 col-lg-4">
                     <div class="card h-100 hover-lift border-0 bg-surface shadow-sm">
                         <img src="assets/img/legal.png" alt="Legal" class="card-img-custom">
                         <div class="card-body p-0">

@@ -130,7 +130,8 @@
                 </div>
                 <!-- RoBERTa Variant -->
                 <div class="col-lg-4">
-                    <div class="card h-100 reveal" style="border-color: var(--accent-color);">
+                    <div class="card h-100 reveal featured-card">
+                        <div class="card-top-strip"></div>
                         <div class="mb-4">
                             <span class="badge bg-accent px-3 py-1 mb-3"
                                 style="background: var(--accent-color);">FLAGSHIP</span>
@@ -183,11 +184,11 @@
 
             <hr class="my-5 border-secondary opacity-10">
 
-            <div class="section-header reveal">
+            <div class="section-header reveal mb-4">
                 <span class="text-accent fw-600">PHASE 02</span>
                 <h2 class="h1">Data Preprocessing</h2>
             </div>
-            <div class="row align-items-center mb-5 section">
+            <div class="row align-items-center section pt-0">
                 <div class="col-lg-6 reveal">
                     <h2 class="mb-4">The Cleaning <span class="text-accent">Stack</span></h2>
                     <p class="text-secondary mb-4">Every piece of text processed by our systems undergoes a multi-stage
@@ -219,22 +220,30 @@
                     </div>
                 </div>
                 <div class="col-lg-6 mt-5 mt-lg-0">
-                    <div class="glass-panel p-5 reveal">
-                        <pre style="color: var(--accent-color); font-size: 0.9rem; line-height: 1.8;">
-<span class="text-secondary"># Sample Preprocessing Pipeline</span>
-def clean_text(raw_data):
-    <span class="text-secondary"># 1. Strip Noise</span>
+                    <div class="code-window reveal">
+                        <div class="code-header">
+                            <div class="code-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <span class="code-file">preprocessing.py</span>
+                        </div>
+                        <div class="code-body">
+                            <pre><code><span class="code-comment"># Sample Preprocessing Pipeline</span>
+<span class="code-keyword">def</span> <span class="code-func">clean_text</span>(raw_data):
+    <span class="code-comment"># 1. Strip Noise</span>
     text = remove_html(raw_data)
     
-    <span class="text-secondary"># 2. Domain Normalization</span>
-    text = expand_slang(text, domain='finance')
+    <span class="code-comment"># 2. Domain Normalization</span>
+    text = expand_slang(text, domain=<span class="code-string">'finance'</span>)
     
-    <span class="text-secondary"># 3. Lemmatization</span>
+    <span class="code-comment"># 3. Lemmatization</span>
     doc = nlp_model(text)
-    tokens = [token.lemma_ for token in doc]
+    tokens = [token.lemma_ <span class="code-keyword">for</span> token <span class="code-keyword">in</span> doc]
     
-    return " ".join(tokens)
-                        </pre>
+    <span class="code-keyword">return</span> <span class="code-string">" "</span>.join(tokens)</code></pre>
+                        </div>
                     </div>
                 </div>
             </div>
