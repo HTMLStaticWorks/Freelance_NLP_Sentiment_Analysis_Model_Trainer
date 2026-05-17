@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (mobileDropdownMenu) {
                 const mobileDropdown = mobileDropdownMenu.closest('.mobile-dropdown');
                 if (mobileDropdown) {
-                    mobileDropdown.classList.add('active');
+                    // Do not auto-expand the mobile dropdown on page load
                     const toggle = mobileDropdown.querySelector('.mobile-dropdown-toggle');
                     if (toggle) toggle.classList.add('active');
                 }
